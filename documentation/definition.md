@@ -1,6 +1,6 @@
 # Määrittelydokumentti
 
-Tässä projektissa vertaillaan Breath First Search (BFS)-, Uniform Cost Search (UCS) - ja AStar (A*)-algoritmien tehokkuutta kaksiulotteisella kartalla ja toteutetaan kyseiset algoritmit Javalla korvaten Javan tarjoamat valmiit pino- ja jonotietorakenteet tmv. tietorakenteet omilla toteutuksilla. 
+Tässä projektissa vertaillaan Breath First Search (BFS)-, Uniform Cost Search (UCS) - ja AStar (A*)-algoritmien tehokkuutta kaksiulotteisella kartalla ja toteutetaan kyseiset algoritmit Javalla korvaten Javan tarjoamat valmiit pino-, jono- tmv. tietorakenteet omilla toteutuksilla. 
 
 Ohjelma saa syötteekseen ASCII-pohjaisia karttatiedostoja, johon on merkitty reitin aloitus- ja lopetuspisteet. Algoritmien tehtävänä on löytyy mahdollisimman lyhyt reitti pisteiden välillä mahdollisimman vähäisellä laskennalle. Algoritmien tehokkuutta arvioidaan vertailemalla niiden tuottamien reittien pituutta ja laskentaan käytettyjä aikoja keskenään.  
 

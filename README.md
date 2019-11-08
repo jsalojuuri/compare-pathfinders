@@ -1,6 +1,6 @@
 # Compare Pathfinders - Polkualgoritmien vertailusovellus
 
-Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutetun polkualgoritmi tehokkuutta kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definnition.md).
+Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutettua polkualgoritmia kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definnition.md).
 
 ## Asennusohje
 
