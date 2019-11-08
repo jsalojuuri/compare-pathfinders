@@ -1,3 +1,4 @@
 /compare-pathfinders/.nb-gradle/
 /compare-pathfinders/build/
 .gradle*
+.gradle/
