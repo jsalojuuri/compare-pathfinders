@@ -7,4 +7,3 @@ gradlew
 /.nb-gradle/
 build.gradle
 settings.gradle
-/.circleci
