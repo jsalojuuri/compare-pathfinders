@@ -3,7 +3,7 @@
 Ajankäyttö viikon aikana: 3 tuntia
 
 Viikon aikana tehdyt asiat:
-* Codecov testikattavuus-raportin aktivointi
+* CircleCi ja Codecov testikattavuus-raporttien aktivointi
 * Algoritmien aloittelua
 
 Ohjelman edistyminen:
