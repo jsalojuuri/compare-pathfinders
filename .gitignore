@@ -5,5 +5,3 @@ gradle/
 gradlew.bat
 gradlew
 /.nb-gradle/
-build.gradle
-settings.gradle
