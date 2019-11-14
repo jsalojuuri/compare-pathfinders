@@ -1,7 +1,10 @@
-/compare-pathfinders/.nb-gradle/
-/compare-pathfinders/build/
-.gradle*
-.gradle/*
+/build/
+.gradle/
+./gradle*
 gradle/
 gradlew.bat
 gradlew
+/.nb-gradle/
+build.gradle
+settings.gradle
+/.circleci
