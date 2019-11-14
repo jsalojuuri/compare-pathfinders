@@ -2,7 +2,7 @@
 
 Tässä projektissa vertaillaan Breath First Search (BFS)-, Uniform Cost Search (UCS) - ja AStar (A*)-algoritmien tehokkuutta kaksiulotteisella kartalla ja toteutetaan kyseiset algoritmit Javalla korvaten Javan tarjoamat valmiit pino-, jono- tmv. tietorakenteet omilla toteutuksilla. 
 
-Ohjelma saa syötteekseen ASCII-pohjaisia karttatiedostoja, johon on merkitty reitin aloitus- ja lopetuspisteet. Algoritmien tehtävänä on löytyy mahdollisimman lyhyt reitti pisteiden välillä mahdollisimman vähäisellä laskennalle. Algoritmien tehokkuutta arvioidaan vertailemalla niiden tuottamien reittien pituutta ja laskentaan käytettyjä aikoja keskenään.  
+Ohjelma saa syötteekseen [ASCII-pohjaisia karttatiedostoja](https://movingai.com/benchmarks/grids.html), johon on merkitty reitin aloitus- ja lopetuspisteet. Algoritmien tehtävänä on löytyy mahdollisimman lyhyt reitti pisteiden välillä mahdollisimman vähäisellä laskennalle. Algoritmien tehokkuutta arvioidaan vertailemalla niiden tuottamien reittien pituutta ja laskentaan käytettyjä aikoja keskenään.  
 
 Lyhyesti vertailuun valituista algoritmeista:
 
@@ -17,4 +17,5 @@ Lyhyesti vertailuun valituista algoritmeista:
 * [Breadth-first Search](https://en.wikipedia.org/wiki/Breadth-first_search) 
 * [Uniform Cost Search](https://algorithmicthoughts.wordpress.com/2012/12/15/artificial-intelligence-uniform-cost-searchucs/)
 * [A* Search](https://en.wikipedia.org/wiki/A*_search_algorithm)
+* [Ascii-kartat](https://movingai.com/benchmarks/grids.html)
 

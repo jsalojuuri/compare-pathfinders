@@ -2,7 +2,7 @@
 
 [![codecov](https://codecov.io/gh/jsalojuuri/compare-pathfinders/branch/master/graph/badge.svg)](https://codecov.io/gh/jsalojuuri/compare-pathfinders)
 
-Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutettua polkualgoritmia kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definnition.md).
+Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutettua polkualgoritmia kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definition.md).
 
 ## Asennusohje
 
