@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/jsalojuuri/compare-pathfinders.svg?style=svg)](https://circleci.com/gh/jsalojuuri/compare-pathfinders)
 [![codecov](https://codecov.io/gh/jsalojuuri/compare-pathfinders/branch/master/graph/badge.svg)](https://codecov.io/gh/jsalojuuri/compare-pathfinders)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7b36ba7afb2476737bcb/maintainability)](https://codeclimate.com/github/jsalojuuri/compare-pathfinders/maintainability)
 
 Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutettua polkualgoritmia kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definition.md).
 

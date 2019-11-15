@@ -3,13 +3,13 @@
 Ajankäyttö viikon aikana: 7 tuntia
 
 Viikon aikana tehdyt asiat:
-* CircleCi ja Codecov testikattavuus-raporttien aktivointi
+* CircleCi, Codecov ja Codeclimate -raporttien aktivointi -> ohjelman toimivuuden, testien kattavuuden ja koodin ylläpidettävyyden arviot näkee repon etusivun badgeista, löytyvät pääotsikon alta
 * Kartta verkoksi
 * Algoritmien aloittelua
 * Useampi testi
 
 Ohjelman edistyminen:
-* Sen verran kiire oli, etten edistämään koodausta niin paljoa kuin olisin toivonut, mutta tein viime viikolla luodusta array-kartasta verkon algoritmeja varten ja aloitin leveyshaun toteutusta. Testejä tein siltä osin kuin olen koodia toteuttanut, tyhjille metodeille en luonut testejä (siellä on useampi getteri ja setteri, joiden muuttujat eivät ole vielä käytössä)
+* Sen verran kiire oli, etten päässyt edistämään koodausta niin paljoa kuin olisin toivonut, mutta tein viime viikolla luodusta array-kartasta verkon algoritmeja varten ja aloitin leveyshaun toteutusta. Testejä tein siltä osin kuin olen koodia toteuttanut, tyhjille metodeille en luonut testejä (siellä on useampi getteri ja setteri, joiden muuttujat eivät ole vielä käytössä)
 
 Mitä opin viikon aikana:
 * Codecov
