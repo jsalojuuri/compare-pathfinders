@@ -17,6 +17,7 @@ Compare Pathfinders sovelluksella voi vertailla kolmea *Javalla* toteutettua pol
 
 * [Viikko 1](./documentation/weeklyreport1.md)
 * [Viikko 2](./documentation/weeklyreport2.md)
+* [Viikko 3](./documentation/weeklyreport3.md)
 
 ## Linkkejä
 

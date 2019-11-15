@@ -19,25 +19,33 @@ public class MapGraphTest {
     }
     
     @Test
-    public void constructorWorksForMapGraph() {
+    public void constructorWorks() throws Exception {
         File mapFile = new File("./static/brc204d_mod.map");
-        String [][] mapArray = new String[429][431];
-        try (Scanner s = new Scanner(new FileReader(mapFile))) {
-            while (s.hasNextLine()) {
-                for (int i=0; i<mapArray.length; i++) {
-                    String[] line = s.nextLine().trim().split("");
-                    for (int j=0; j<mapArray[0].length; j++) {
-                        mapArray[i][j] = line[j];
-                    }
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Exception in reading file");
-        }
-        
-        assertEquals("@", mapArray[0][0]);
-        assertEquals("T", mapArray[0][20]);
-        
+        MapGraph mapGraph = new MapGraph(mapFile);
+        assertNotNull(mapGraph);
     }
+    
+    @Test
+    public void searchStartNode() throws Exception {
+        File mapFile = new File("./static/brc204d_mod.map");
+        MapGraph mapGraph = new MapGraph(mapFile);
+        assertEquals("S",mapGraph.searchStartNode().getType());
+    }
+    
+    @Test
+    public void searchFinishNode() throws Exception {
+        File mapFile = new File("./static/brc204d_mod.map");
+        MapGraph mapGraph = new MapGraph(mapFile);
+        assertEquals("F",mapGraph.searchFinishNode().getType());
+    }
+    
+    @Test
+    public void getMapGraph() throws Exception {
+        File mapFile = new File("./static/brc204d_mod.map");
+        MapGraph mapGraph = new MapGraph(mapFile);
+        assertNotNull(mapGraph.getMapGraph());
+    }
+    
+
     
 }
