@@ -1,7 +1,7 @@
 package copa.main;
 
+import copa.mapgraph.MapGraph;
 import copa.ui.*;
-import copa.logic.*;
 import java.io.File;
 import java.util.Scanner;
 

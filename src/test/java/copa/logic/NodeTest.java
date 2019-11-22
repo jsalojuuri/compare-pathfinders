@@ -5,6 +5,7 @@
  */
 package copa.logic;
 
+import copa.mapgraph.Node;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;

@@ -1,20 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
 // Plugins
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+    id 'java'
+    id 'application'
+}
+
 apply plugin: 'jacoco'
 
-
-mainClassName = 'copa.main.Main'
-
+// Repositories
 repositories {
     mavenCentral()
 }
 
+project.ext {
+    junitVersion = "4.12"
+}
+
+mainClassName = 'copa.main.Main'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
 dependencies {
-    // TODO: Add dependencies here ...
-    // You can read more about how to add dependency here:
-    //   http://www.gradle.org/docs/current/userguide/dependency_management.html#sec:how_to_declare_your_dependencies
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile "junit:junit:" + junitVersion 
 }
 
 jacocoTestReport {
@@ -30,7 +45,6 @@ check.dependsOn jacocoTestReport
 run {
     standardInput = System.in
 }
-
 
 
 

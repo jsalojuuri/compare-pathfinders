@@ -1,5 +1,6 @@
 package copa.logic;
 
+import copa.mapgraph.MapGraph;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileReader;

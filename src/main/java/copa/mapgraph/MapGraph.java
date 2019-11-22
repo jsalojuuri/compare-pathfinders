@@ -1,5 +1,5 @@
 
-package copa.logic;
+package copa.mapgraph;
 
 import java.io.File;
 import java.io.FileReader;
@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class MapGraph {
     
-    Node [][] mapGraph = new Node[429][431];
+    public Node [][] mapGraph = new Node[429][431];
     
     /** Constructor for MapGraph
      * @param mapFile .map file from https://movingai.com/benchmarks/grids.html.
@@ -49,6 +49,18 @@ public class MapGraph {
                 if (j-1>=0) {
                     neighbours.add(mapGraph[i][j-1]);
                 }
+                if (i+1<mapGraph.length && j+1<mapGraph[0].length) {
+                    neighbours.add(mapGraph[i+1][j+1]);
+                }
+                if (i-1>=0 && j-1>=0) {
+                    neighbours.add(mapGraph[i-1][j-1]);
+                }
+                if (i-1>=0 && j+1<mapGraph[0].length) {
+                    neighbours.add(mapGraph[i-1][j+1]);
+                }
+                if (i+1<mapGraph.length && j-1>=0) {
+                    neighbours.add(mapGraph[i+1][j-1]);
+                }
                 mapGraph[i][j].setNeighbours(neighbours);
             }
         }
@@ -69,7 +81,9 @@ public class MapGraph {
         return mapGraph;
     }
     
-    /** searches starting Node from mapGraph */
+    /** searches starting Node from mapGraph 
+     * @return start node
+     */
     public Node searchStartNode() {
         for (int i=0; i<mapGraph.length; i++) {
             for (int j=0; j<mapGraph[0].length; j++) {
@@ -81,7 +95,9 @@ public class MapGraph {
         return null;
     }
     
-    /** searches finish Node from mapGraph */
+    /** searches finish Node from mapGraph 
+     * @return finish node
+     */
     public Node searchFinishNode() {
         for (int i=0; i<mapGraph.length; i++) {
             for (int j=0; j<mapGraph[0].length; j++) {
