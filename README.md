@@ -6,14 +6,6 @@
 
 Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua polkualgoritmia kaksiulotteisella ASCII-kartalla. Lue tarkemmin vertailtavista algoritmeista [määrittelydokumentista](./documentation/definition.md).
 
-## Asennusohje
-
-(tulossa myöhemmin)
-
-## Käyttöohje
-
-(tulossa myöhemmin)
-
 ## Viikkoraportit
 
 * [Viikko 1](./documentation/weeklyreport1.md)
@@ -21,9 +13,11 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 * [Viikko 3](./documentation/weeklyreport3.md)
 * [Viikko 4](./documentation/weeklyreport4.md)
 
-## Linkkejä
+## Dokumentaatio
 
 * [Määrittelydokumentti](./documentation/definition.md)
+* [Asennusohje](./documentation/installation.md)
+* [Käyttöohje](./documentation/manual.md)
 * [Toteutusdokumentti (tulossa myöhemmin)](./documentation/implementation.md)
 * [Testausdokumentti (tulossa myöhemmin)](./documentation/testing.md)
 
