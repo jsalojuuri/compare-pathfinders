@@ -1,4 +1,4 @@
-package copa.logic;
+package copa.mapgraph;
 
 import copa.mapgraph.MapGraph;
 import java.util.Scanner;
@@ -47,6 +47,11 @@ public class MapGraphTest {
         assertNotNull(mapGraph.getMapGraph());
     }
     
+    /*
+    @Test
+    public void printMapFromGraphWorks() {
+    }
+    */
 
     
 }
