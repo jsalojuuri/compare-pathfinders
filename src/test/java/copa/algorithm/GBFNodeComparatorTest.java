@@ -29,6 +29,6 @@ public class GBFNodeComparatorTest {
         Node finish = mapGraph.searchFinishNode();
         Node node1 = mapGraph.searchStartNode();
         node1.setDistanceFromFinish(finish);
-        assertEquals(1,gbfNodeComparator.compare(node1, finish));
+        assertEquals(-1,gbfNodeComparator.compare(node1, finish));
     }
 }
