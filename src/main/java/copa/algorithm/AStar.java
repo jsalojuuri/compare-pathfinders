@@ -11,26 +11,28 @@ import java.util.Queue;
   */
 public class AStar {
     
-    /** map as a graph */
     private MapGraph mapGraph;
+    private int nodesVisited;
+    private Node start; 
+    private Node finish;
+    private boolean [][] visited; 
+    private boolean [][] noticed;
+    private Queue<Node> queue;
+    private Node currentNode;
     
     public AStar(MapGraph mapGraph) {   
         this.mapGraph = mapGraph;
+        this.nodesVisited = 0;
+        this.start = mapGraph.searchStartNode();
+        this.finish = mapGraph.searchFinishNode();
+        this.visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.queue = new PriorityQueue<>(new AStarNodeComparator());;
     }
 
     /** starts A* algorithm */
     public void startAlgorithm() {
 
-        /** initialise algorithm  */
-        int nodesVisited = 0;
-        Node start = mapGraph.searchStartNode();
-        Node finish = mapGraph.searchFinishNode();
-        boolean [][] visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        boolean [][] noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        /** A* priority queue uses AstarNodeComparator class to prioritise nodes */
-        Queue<Node> queue = new PriorityQueue<>(new AStarNodeComparator());
-        Node currentNode;
-        
         /** set starting node distance from finish node and add it to priority queue */
         start.setDistanceFromFinish(finish);
         queue.add(start);

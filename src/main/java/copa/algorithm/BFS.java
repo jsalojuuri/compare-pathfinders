@@ -11,24 +11,28 @@ import java.util.Queue;
      */
 public class BFS {
     
-    /** map as a graph */
     private MapGraph mapGraph;
+    int nodesVisited;
+    Node start;
+    boolean [][] visited;
+    boolean [][] noticed;
+    Queue<Node> queue;
+    Node currentNode;
+
+
     
     public BFS(MapGraph mapGraph) {
         this.mapGraph = mapGraph;
+        this.nodesVisited = 0;
+        this.start = mapGraph.searchStartNode();
+        this.visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.queue = new ArrayDeque<>();
     }
     
     /** starts BFS algorithm */
     public void startAlgorithm() {
 
-        /** initialise algorithm  */
-        int nodesVisited = 0;
-        Node start = mapGraph.searchStartNode();
-        boolean [][] visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        boolean [][] noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        Queue<Node> queue = new ArrayDeque<>();
-        Node currentNode;
-        
         /** add starting node to queue */
         queue.add(start);
         /** set starting node as noticed */

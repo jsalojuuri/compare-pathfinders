@@ -10,26 +10,27 @@ import java.util.Queue;
      */
 public class UCS {
     
-    /** map as a graph */
     private MapGraph mapGraph;
+    int nodesVisited;
+    Node start;
+    Node finish;
+    boolean [][] visited;
+    boolean [][] noticed;
+    Queue<Node> queue;
+    Node currentNode;
     
     public UCS(MapGraph mapGraph) {
         this.mapGraph = mapGraph;
+        this.nodesVisited = 0;
+        this.start = mapGraph.searchStartNode();
+        this.finish = mapGraph.searchFinishNode();
+        this.visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
+        this.queue = new PriorityQueue<>(new UCSNodeComparator());  
     }
 
     /** starts UCS algorithm */
-    public void startAlgorithm() {
-
-        /** initialise algorithm  */
-        int nodesVisited = 0;
-        Node start = mapGraph.searchStartNode();
-        Node finish = mapGraph.searchFinishNode();
-        boolean [][] visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        boolean [][] noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
-        /** UCS priority queue uses UCSNodeComparator class to prioritise nodes */
-        Queue<Node> queue = new PriorityQueue<>(new UCSNodeComparator());
-        Node currentNode;
-        
+    public void startAlgorithm() {    
         /** set starting node distance from finish node and it to priority queue */
         start.setDistanceFromFinish(finish);
         queue.add(start);

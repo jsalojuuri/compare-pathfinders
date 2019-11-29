@@ -1,6 +1,7 @@
 package copa.algorithm;
 
 import copa.mapgraph.MapGraph;
+import copa.mapgraph.Node;
 import java.io.File;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
@@ -22,8 +23,11 @@ public class AStarTest {
         astar = new AStar(mapGraph);
     }
     
+    
     @Test
-    public void constructorWorksifmapGraphOk() throws Exception {
+    public void constructorWorks() throws Exception {
         assertNotNull(astar);
     }
+    
+
 }
