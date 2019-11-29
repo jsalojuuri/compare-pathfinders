@@ -35,5 +35,12 @@ public class AStarTest {
         assertEquals(1,astar.queue.size());
         assertEquals(true,astar.noticed[astar.start.getRow()][astar.start.getCol()]);
     }
+    
+    @Test
+    public void currentNodeNotNullWhenAlgoStarted() {
+        astar.algoSetup();
+        astar.startAlgorithm();
+        assertNotNull(astar.currentNode);
+    }
 
 }

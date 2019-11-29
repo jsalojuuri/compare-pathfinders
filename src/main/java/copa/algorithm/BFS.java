@@ -40,12 +40,6 @@ public class BFS {
         algoSetup();
             
         while (!queue.isEmpty()) {
-            
-            /** check if path is too long */
-            if (nodesVisited > 100000) {
-                System.out.println("Something went wrong, too many nodes visited!");
-                break;
-            }
             /** take next node from queue and set as current node */
             currentNode = queue.poll();
             

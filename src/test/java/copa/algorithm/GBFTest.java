@@ -34,4 +34,11 @@ public class GBFTest {
         assertEquals(1,gbf.queue.size());
         assertEquals(true,gbf.noticed[gbf.start.getRow()][gbf.start.getCol()]);
     }
+    
+    @Test
+    public void currentNodeNotNullWhenAlgoStarted() {
+        gbf.algoSetup();
+        gbf.startAlgorithm();
+        assertNotNull(gbf.currentNode);
+    }
 }

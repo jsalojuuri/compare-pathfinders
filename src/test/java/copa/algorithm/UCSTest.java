@@ -34,4 +34,11 @@ public class UCSTest {
         assertEquals(1,ucs.queue.size());
         assertEquals(true,ucs.noticed[ucs.start.getRow()][ucs.start.getCol()]);
     }
+    
+    @Test
+    public void currentNodeNotNullWhenAlgoStarted() {
+        ucs.algoSetup();
+        ucs.startAlgorithm();
+        assertNotNull(ucs.currentNode);
+    }
 }

@@ -43,12 +43,6 @@ public class AStar {
         algoSetup();
         
         while (!queue.isEmpty()) {
-            
-            /** check if too many nodes are being visited */
-            if (nodesVisited > 100000) {
-                System.out.println("Something went wrong, too many nodes visited!");
-                break;
-            }
             /** take next node from queue and set as current node */
             currentNode = queue.poll();
             /** if node is not yet visited, set as visited */
