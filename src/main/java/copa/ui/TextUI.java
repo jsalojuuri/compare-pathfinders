@@ -29,33 +29,37 @@ public class TextUI implements UI {
         System.out.println("Compare Pathfinder Algorithms");
         
         while (true) {
-            System.out.println("Options: \n[1] Print map \n[2] Breadth-First Search \n[3] Uniform Cost Search \n[4] Greedy Best First Search \n[5] A* Search \n[q] Quit");
+            System.out.print("Options: "
+                    + "\n[1] Print map "
+                    + "\n[2] Compare Algorithms "
+                    + "\n[q] Quit"
+                    + "\n");
+            
             String input = scanner.nextLine();
 
             /** prints map */
             if (input.equals("1")) {
                 mapGraph.printMapFromGraph();
+                System.out.println("\nMAP SIZE: " + mapGraph.mapGraph.length + " rows, "
+                        + mapGraph.mapGraph[0].length + " columns");
+                System.out.println("START NODE coordinates: " + mapGraph.searchStartNode().toString());
+                System.out.println("FINISH NODE coordinates: " + mapGraph.searchFinishNode().toString() + "\n");        
             }   
-            
-            /** Breadth-First-Search algorithm */
+
             if (input.equals("2")) {
+                System.out.println("\nBFS:");
                 BFS bfs = new BFS(mapGraph);
                 bfs.startAlgorithm();
-            }
-            
-            if (input.equals("3")) {
+                System.out.println("\nUCS:");
                 UCS ucs = new UCS(mapGraph);
                 ucs.startAlgorithm();
-            }
-            
-            if (input.equals("4")) {
+                System.out.println("\nGBF:");
                 GBF gbf = new GBF(mapGraph);
                 gbf.startAlgorithm();
-            }
-            
-            if (input.equals("5")) {
+                System.out.println("\nA*");
                 AStar astar = new AStar(mapGraph);
                 astar.startAlgorithm();
+                System.out.println("");
             }
             
             if (input.equals("q")) {

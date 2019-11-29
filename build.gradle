@@ -11,6 +11,7 @@ plugins {
 }
 
 apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 
 // Repositories
 repositories {

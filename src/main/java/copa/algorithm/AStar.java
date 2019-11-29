@@ -14,12 +14,8 @@ public class AStar {
     /** map as a graph */
     private MapGraph mapGraph;
     
-    public AStar(MapGraph mapGraph) {
-        try {
-            this.mapGraph = mapGraph;
-        } catch (Exception e) {
-            System.out.println("A* constructor produced an error");
-        }
+    public AStar(MapGraph mapGraph) {   
+        this.mapGraph = mapGraph;
     }
 
     /** starts A* algorithm */

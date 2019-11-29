@@ -14,11 +14,7 @@ public class UCS {
     private MapGraph mapGraph;
     
     public UCS(MapGraph mapGraph) {
-        try {
-            this.mapGraph = mapGraph;
-        } catch (Exception e) {
-            System.out.println("UCS constructor produced an error");
-        }
+        this.mapGraph = mapGraph;
     }
 
     /** starts UCS algorithm */

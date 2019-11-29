@@ -14,11 +14,7 @@ public class GBF {
     private MapGraph mapGraph;
     
     public GBF(MapGraph mapGraph) {
-        try {
-            this.mapGraph = mapGraph;
-        } catch (Exception e) {
-            System.out.println("GBF constructor produced an error");
-        }
+        this.mapGraph = mapGraph;
     }
 
     /** starts GBF algorithm */

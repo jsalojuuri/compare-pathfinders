@@ -15,11 +15,7 @@ public class BFS {
     private MapGraph mapGraph;
     
     public BFS(MapGraph mapGraph) {
-        try {
-            this.mapGraph = mapGraph;
-        } catch (Exception e) {
-            System.out.println("BFS constructor produced an error");
-        }
+        this.mapGraph = mapGraph;
     }
     
     /** starts BFS algorithm */
