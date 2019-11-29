@@ -37,7 +37,6 @@ public class AStar {
         /** set starting node as noticed */
         noticed[start.getRow()][start.getCol()] = true;
         
-        
         while (!queue.isEmpty()) {
             
             /** check if too many nodes are being visited */
@@ -47,7 +46,6 @@ public class AStar {
             }
             /** take next node from queue and set as current node */
             currentNode = queue.poll();
-            
             /** if node is not yet visited, set as visited */
             if (!visited[currentNode.getRow()][currentNode.getCol()]) {
                 visited[currentNode.getRow()][currentNode.getCol()] = true;
@@ -86,6 +84,6 @@ public class AStar {
                     nodesVisited += 1;
                 }
             } 
-        }   
+        }
     } 
 }

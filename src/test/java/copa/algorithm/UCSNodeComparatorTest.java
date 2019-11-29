@@ -12,25 +12,25 @@ import org.junit.Test;
  *
  * @author salojuur
  */
-public class GBFNodeComparatorTest {
+public class UCSNodeComparatorTest {
     private File mapFile;
     private MapGraph mapGraph;
-    private GBFNodeComparator gbfNodeComparator;
+    private UCSNodeComparator ucsNodeComparator;
     
     @Before
     public void setUp() throws Exception {
         mapFile = new File("./static/brc204d_mod.map");
         mapGraph = new MapGraph(mapFile); 
-        gbfNodeComparator = new GBFNodeComparator();
+        ucsNodeComparator = new UCSNodeComparator();
     }
     
     @Test
     public void compareWorks() throws Exception {
-        Node finish = mapGraph.searchFinishNode();
-        Node node1 = mapGraph.searchStartNode();
-        node1.setDistanceFromFinish(finish);
-        assertEquals(-1,gbfNodeComparator.compare(node1, finish));
-        assertEquals(1,gbfNodeComparator.compare(finish, node1));
-        assertEquals(0,gbfNodeComparator.compare(node1, node1));
+        Node node1 = mapGraph.searchFinishNode();
+        Node node2 = mapGraph.searchStartNode();
+        node2.setPathCost(10);
+        assertEquals(-1,ucsNodeComparator.compare(node1, node2));
+        assertEquals(1,ucsNodeComparator.compare(node2, node1));
+        assertEquals(0,ucsNodeComparator.compare(node1, node1));
     }
 }

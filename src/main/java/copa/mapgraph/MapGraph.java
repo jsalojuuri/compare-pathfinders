@@ -13,7 +13,7 @@ import java.util.Scanner;
      * @author Jari Salojuuri,
      */
 
-public final class MapGraph {
+public class MapGraph {
     
     public Node [][] mapGraph = new Node[429][431];
     public Node start;
@@ -52,6 +52,7 @@ public final class MapGraph {
         for (int i=0; i<mapGraph.length; i++) {
             for (int j=0; j<mapGraph[0].length; j++) {
                 List<Node> neighbours = new ArrayList<>();
+                
                 if (i+1<mapGraph.length) {
                     neighbours.add(mapGraph[i+1][j]);
                 }
@@ -75,10 +76,10 @@ public final class MapGraph {
                 }
                 if (i+1<mapGraph.length && j-1>=0) {
                     neighbours.add(mapGraph[i+1][j-1]);
-                }
+                }            
                 mapGraph[i][j].setNeighbours(neighbours);
             }
-        }    
+        }
     }
     
     /** prints map from 2D-array */
@@ -123,10 +124,14 @@ public final class MapGraph {
             if (mapGraph[row][col].getType().equals(".")) {
                 mapGraph[row][col].setType(nodeType);
                 if (nodeType.equals("S")) {
-                    this.start = new Node(row, col, nodeType);
+                    Node s = mapGraph[row][col];
+                    s.setType(nodeType);
+                    this.start = s;
                 }
                 if (nodeType.equals("F") && (this.start.getCol() != col || this.start.getRow() != row)) {
-                    this.finish = new Node(row, col, nodeType);
+                    Node f = mapGraph[row][col];
+                    f.setType(nodeType);
+                    this.finish = f;
                 }
                 break;
             }         

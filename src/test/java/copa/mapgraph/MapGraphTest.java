@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintStream;
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,5 +46,13 @@ public class MapGraphTest {
     public void getMapGraph() throws Exception {
         assertNotNull(mapGraph.getMapGraph());
     }
-      
+    
+    /*
+    @Test
+    public void mapGraphNodesHaveNeighbours() {
+        Node start = mapGraph.searchStartNode();
+        List<Node> neighbours = start.getNeighbours();
+        assertEquals(8,neighbours.size());
+    }
+     */ 
 }

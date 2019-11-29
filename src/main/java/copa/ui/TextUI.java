@@ -47,6 +47,7 @@ public class TextUI implements UI {
             }   
 
             if (input.equals("2")) {
+                
                 System.out.println("\nBFS:");
                 BFS bfs = new BFS(mapGraph);
                 bfs.startAlgorithm();
@@ -60,6 +61,7 @@ public class TextUI implements UI {
                 AStar astar = new AStar(mapGraph);
                 astar.startAlgorithm();
                 System.out.println("");
+                
             }
             
             if (input.equals("q")) {

@@ -34,5 +34,9 @@ public class AStarNodeComparatorTest {
         node2.setDistanceFromFinish(finish);
         node2.setPathCost(1);
         assertEquals(1,aStarNodeComparator.compare(node1, node2));
+        assertEquals(-1,aStarNodeComparator.compare(node2, node1));
+        assertEquals(0,aStarNodeComparator.compare(node1, node1));
     }
+    
+    
 }

@@ -19,7 +19,7 @@ public class UCSNodeComparator implements Comparator<Node> {
         if (node1.getPathCost() > node2.getPathCost()) {
             return 1;
         }
-        if (node1.getPathCost() > node2.getPathCost()) {
+        if (node1.getPathCost() < node2.getPathCost()) {
             return -1;
         }
         return 0;
