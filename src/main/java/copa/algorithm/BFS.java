@@ -18,8 +18,6 @@ public class BFS {
     boolean [][] noticed;
     Queue<Node> queue;
     Node currentNode;
-
-
     
     public BFS(MapGraph mapGraph) {
         this.mapGraph = mapGraph;
@@ -30,13 +28,16 @@ public class BFS {
         this.queue = new ArrayDeque<>();
     }
     
+    /** add starting node to queue, set starting node as noticed */
+    public void algoSetup() {        
+        queue.add(start);
+        noticed[start.getRow()][start.getCol()] = true;
+    }
+    
     /** starts BFS algorithm */
     public void startAlgorithm() {
-
-        /** add starting node to queue */
-        queue.add(start);
-        /** set starting node as noticed */
-        noticed[start.getRow()][start.getCol()] = true;
+        
+        algoSetup();
             
         while (!queue.isEmpty()) {
             

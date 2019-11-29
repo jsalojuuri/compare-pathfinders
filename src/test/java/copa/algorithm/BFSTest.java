@@ -2,6 +2,7 @@ package copa.algorithm;
 
 import copa.mapgraph.MapGraph;
 import java.io.File;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,5 +26,12 @@ public class BFSTest {
     @Test
     public void constructorWorks() throws Exception {
         assertNotNull(bfs);
+    }
+    
+    @Test
+    public void algoSetupWorks() {
+        bfs.algoSetup();
+        assertEquals(1,bfs.queue.size());
+        assertEquals(true,bfs.noticed[bfs.start.getRow()][bfs.start.getCol()]);
     }
 }

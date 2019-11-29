@@ -11,14 +11,14 @@ import java.util.Queue;
   */
 public class AStar {
     
-    private MapGraph mapGraph;
-    private int nodesVisited;
-    private Node start; 
-    private Node finish;
-    private boolean [][] visited; 
-    private boolean [][] noticed;
-    private Queue<Node> queue;
-    private Node currentNode;
+    MapGraph mapGraph;
+    int nodesVisited;
+    Node start; 
+    Node finish;
+    boolean [][] visited; 
+    boolean [][] noticed;
+    Queue<Node> queue;
+    Node currentNode;
     
     public AStar(MapGraph mapGraph) {   
         this.mapGraph = mapGraph;
@@ -30,14 +30,17 @@ public class AStar {
         this.queue = new PriorityQueue<>(new AStarNodeComparator());;
     }
 
+    /** set starting node distance from finish node and add it to priority queue, set starting node as noticed */
+    public void algoSetup() {        
+        this.start.setDistanceFromFinish(finish);
+        this.queue.add(start);
+        this.noticed[start.getRow()][start.getCol()] = true;
+    }
+    
     /** starts A* algorithm */
     public void startAlgorithm() {
-
-        /** set starting node distance from finish node and add it to priority queue */
-        start.setDistanceFromFinish(finish);
-        queue.add(start);
-        /** set starting node as noticed */
-        noticed[start.getRow()][start.getCol()] = true;
+        
+        algoSetup();
         
         while (!queue.isEmpty()) {
             

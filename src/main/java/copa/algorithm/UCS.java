@@ -28,15 +28,19 @@ public class UCS {
         this.noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];
         this.queue = new PriorityQueue<>(new UCSNodeComparator());  
     }
+    
+    /** set starting node distance from finish node and it to priority queue, set starting node as noticed */
+    public void algoSetup() {             
+        start.setDistanceFromFinish(finish);
+        queue.add(start);
+        noticed[start.getRow()][start.getCol()] = true;
+    }
 
     /** starts UCS algorithm */
     public void startAlgorithm() {    
-        /** set starting node distance from finish node and it to priority queue */
-        start.setDistanceFromFinish(finish);
-        queue.add(start);
-        /** set starting node as noticed */
-        noticed[start.getRow()][start.getCol()] = true;
-              
+
+        algoSetup();
+        
         while (!queue.isEmpty()) {
             
             /** check if path is too long */

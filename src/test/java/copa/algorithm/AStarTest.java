@@ -3,6 +3,7 @@ package copa.algorithm;
 import copa.mapgraph.MapGraph;
 import copa.mapgraph.Node;
 import java.io.File;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,11 +24,16 @@ public class AStarTest {
         astar = new AStar(mapGraph);
     }
     
-    
     @Test
     public void constructorWorks() throws Exception {
         assertNotNull(astar);
     }
     
+    @Test
+    public void algoSetupWorks() {
+        astar.algoSetup();
+        assertEquals(1,astar.queue.size());
+        assertEquals(true,astar.noticed[astar.start.getRow()][astar.start.getCol()]);
+    }
 
 }
