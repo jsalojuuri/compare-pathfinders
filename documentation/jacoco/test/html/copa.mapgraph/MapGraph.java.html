@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapGraph.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">compare-pathfinders</a> &gt; <a href="index.source.html" class="el_package">copa.mapgraph</a> &gt; <span class="el_source">MapGraph.java</span></div><h1>MapGraph.java</h1><pre class="source lang-java linenums">
+package copa.mapgraph;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+   /**
+     * MapGraph object that creates a 2D array out of map files.
+     * @author Jari Salojuuri,
+     */
+
+public class MapGraph {
+    
+<span class="fc" id="L18">    public Node [][] mapGraph = new Node[429][431];</span>
+    public Node start;
+    public Node finish;
+    
+    /** Constructor for MapGraph
+     * @param mapFile .map file from https://movingai.com/benchmarks/grids.html.
+     * @throws java.lang.Exception
+     */
+<span class="fc" id="L26">    public MapGraph(File mapFile) throws Exception {</span>
+<span class="fc" id="L27">        create2DNodeArray(mapFile);</span>
+<span class="fc" id="L28">        createNodeNeigbours();</span>
+<span class="fc" id="L29">        setRandomPassableTerrainNodeType(mapGraph.length, mapGraph[0].length, &quot;S&quot;);</span>
+<span class="fc" id="L30">        setRandomPassableTerrainNodeType(mapGraph.length, mapGraph[0].length, &quot;F&quot;);</span>
+<span class="fc" id="L31">    }</span>
+ 
+    /** Creates 2D Node array from map file 
+     * @param mapFile map file
+     * @throws java.lang.Exception
+     */
+    public void create2DNodeArray(File mapFile) throws Exception {
+        /** creates 2D Node array */
+<span class="fc" id="L39">        try (Scanner s = new Scanner(new FileReader(mapFile))) {</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            while (s.hasNextLine()) {</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                for (int i=0; i&lt;mapGraph.length; i++) {</span>
+<span class="fc" id="L42">                    String[] line = s.nextLine().trim().split(&quot;&quot;);</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">                    for (int j=0; j&lt;mapGraph[0].length; j++) {</span>
+<span class="fc" id="L44">                        mapGraph[i][j] = new Node(i,j,line[j]);</span>
+                    }
+                }
+            }
+        }
+<span class="fc" id="L49">    }</span>
+    
+    public void createNodeNeigbours() {    
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (int i=0; i&lt;mapGraph.length; i++) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            for (int j=0; j&lt;mapGraph[0].length; j++) {</span>
+<span class="fc" id="L54">                List&lt;Node&gt; neighbours = new ArrayList&lt;&gt;();</span>
+                
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                if (i+1&lt;mapGraph.length) {</span>
+<span class="fc" id="L57">                    neighbours.add(mapGraph[i+1][j]);</span>
+                }
+<span class="fc bfc" id="L59" title="All 2 branches covered.">                if (i-1&gt;=0) {</span>
+<span class="fc" id="L60">                    neighbours.add(mapGraph[i-1][j]);</span>
+                }
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                if (j+1&lt;mapGraph[0].length) {</span>
+<span class="fc" id="L63">                    neighbours.add(mapGraph[i][j+1]);</span>
+                }
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                if (j-1&gt;=0) {</span>
+<span class="fc" id="L66">                    neighbours.add(mapGraph[i][j-1]);</span>
+                }
+<span class="fc bfc" id="L68" title="All 4 branches covered.">                if (i+1&lt;mapGraph.length &amp;&amp; j+1&lt;mapGraph[0].length) {</span>
+<span class="fc" id="L69">                    neighbours.add(mapGraph[i+1][j+1]);</span>
+                }
+<span class="fc bfc" id="L71" title="All 4 branches covered.">                if (i-1&gt;=0 &amp;&amp; j-1&gt;=0) {</span>
+<span class="fc" id="L72">                    neighbours.add(mapGraph[i-1][j-1]);</span>
+                }
+<span class="fc bfc" id="L74" title="All 4 branches covered.">                if (i-1&gt;=0 &amp;&amp; j+1&lt;mapGraph[0].length) {</span>
+<span class="fc" id="L75">                    neighbours.add(mapGraph[i-1][j+1]);</span>
+                }
+<span class="fc bfc" id="L77" title="All 4 branches covered.">                if (i+1&lt;mapGraph.length &amp;&amp; j-1&gt;=0) {</span>
+<span class="fc" id="L78">                    neighbours.add(mapGraph[i+1][j-1]);</span>
+                }            
+<span class="fc" id="L80">                mapGraph[i][j].setNeighbours(neighbours);</span>
+            }
+        }
+<span class="fc" id="L83">    }</span>
+    
+    /** prints map from 2D-array */
+    public void printMapFromGraph() {
+<span class="nc bnc" id="L87" title="All 2 branches missed.">        for (Node[] mapGraph1 : mapGraph) {</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">            for (int j = 0; j&lt;mapGraph[0].length; j++) {</span>
+<span class="nc" id="L89">                System.out.print(mapGraph1[j].getType());</span>
+            }
+<span class="nc" id="L91">            System.out.println(&quot;&quot;);</span>
+        }
+<span class="nc" id="L93">    }</span>
+   
+    public Node [][] getMapGraph() {
+<span class="fc" id="L96">        return mapGraph;</span>
+    }
+    
+    /** searches starting Node from mapGraph 
+     * @return start node
+     */
+    public Node searchStartNode() {
+<span class="fc" id="L103">        return this.start;</span>
+    }
+    
+    /** searches finish Node from mapGraph 
+     * @return finish node
+     */
+    public Node searchFinishNode() {
+<span class="fc" id="L110">        return this.finish;</span>
+    }
+    
+    /** sets 
+     * @param maxRow max array length
+     * @param maxCol max array[0] length
+     * @param nodeType node type
+     * random start and finish nodes */
+    private void setRandomPassableTerrainNodeType(int maxRow, int maxCol, String nodeType) {     
+        int row;
+        int col;
+        while (true) {
+<span class="fc" id="L122">            row = new Random().nextInt(maxRow);</span>
+<span class="fc" id="L123">            col = new Random().nextInt(maxCol);</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">            if (mapGraph[row][col].getType().equals(&quot;.&quot;)) {</span>
+<span class="fc" id="L125">                mapGraph[row][col].setType(nodeType);</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">                if (nodeType.equals(&quot;S&quot;)) {</span>
+<span class="fc" id="L127">                    Node s = mapGraph[row][col];</span>
+<span class="fc" id="L128">                    s.setType(nodeType);</span>
+<span class="fc" id="L129">                    this.start = s;</span>
+                }
+<span class="pc bpc" id="L131" title="3 of 6 branches missed.">                if (nodeType.equals(&quot;F&quot;) &amp;&amp; (this.start.getCol() != col || this.start.getRow() != row)) {</span>
+<span class="fc" id="L132">                    Node f = mapGraph[row][col];</span>
+<span class="fc" id="L133">                    f.setType(nodeType);</span>
+<span class="fc" id="L134">                    this.finish = f;</span>
+<span class="fc" id="L135">                }</span>
+                break;
+            }         
+        }
+<span class="fc" id="L139">    }</span>
+    
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GBF.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">compare-pathfinders</a> &gt; <a href="index.source.html" class="el_package">copa.algorithm</a> &gt; <span class="el_source">GBF.java</span></div><h1>GBF.java</h1><pre class="source lang-java linenums">package copa.algorithm;
+
+import copa.mapgraph.Node;
+import copa.mapgraph.MapGraph;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+   /** Greedy Best First Algorithm for selected map.
+     * @author Jari Salojuuri,
+     */
+public class GBF {
+    
+    /** map as a graph */
+    private MapGraph mapGraph;
+    int nodesVisited;
+    Node start;
+    Node finish;
+    boolean [][] visited;
+    boolean [][] noticed;
+    Queue&lt;Node&gt; queue;
+    Node currentNode;
+    
+<span class="fc" id="L23">    public GBF(MapGraph mapGraph) {</span>
+<span class="fc" id="L24">        this.mapGraph = mapGraph;</span>
+<span class="fc" id="L25">        this.nodesVisited = 0;</span>
+<span class="fc" id="L26">        this.start = mapGraph.searchStartNode();</span>
+<span class="fc" id="L27">        this.finish = mapGraph.searchFinishNode();</span>
+<span class="fc" id="L28">        this.visited = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];</span>
+<span class="fc" id="L29">        this.noticed = new boolean[mapGraph.mapGraph.length][mapGraph.mapGraph[0].length];</span>
+<span class="fc" id="L30">        this.queue = new PriorityQueue&lt;&gt;(new GBFNodeComparator());</span>
+<span class="fc" id="L31">    }</span>
+    
+    /** set starting node distance from finish node and it to priority queue, set starting node as noticed */
+    public void algoSetup() {        
+<span class="fc" id="L35">        start.setDistanceFromFinish(finish);</span>
+<span class="fc" id="L36">        queue.add(start);</span>
+<span class="fc" id="L37">        noticed[start.getRow()][start.getCol()] = true;</span>
+<span class="fc" id="L38">    }</span>
+    
+    /** starts GBF algorithm */
+    public void startAlgorithm() {
+        
+<span class="fc" id="L43">        algoSetup();</span>
+        
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">        while (!queue.isEmpty()) {</span>
+            /** take next node from queue and set as current node */
+<span class="fc" id="L47">            currentNode = queue.poll();</span>
+            
+            /** if node is not yet visited, set as visited */
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">            if (!visited[currentNode.getRow()][currentNode.getCol()]) {</span>
+<span class="fc" id="L51">                visited[currentNode.getRow()][currentNode.getCol()] = true;</span>
+                /** if current node equals to finish node, report statistics and end loop */
+<span class="fc bfc" id="L53" title="All 2 branches covered.">                if (currentNode.getType().equals(&quot;F&quot;)) {</span>
+<span class="fc" id="L54">                    System.out.println(&quot;GOAL &quot; + currentNode + &quot; REACHED! &quot; </span>
+                            + &quot;\nNodes visited: &quot; +nodesVisited 
+<span class="fc" id="L56">                            + &quot;\nPath cost: &quot; +currentNode.getPathCost() </span>
+<span class="fc" id="L57">                            + &quot;\nPath length: &quot; +currentNode.getPathLength());</span>
+<span class="fc" id="L58">                    break;</span>
+                /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
+                } else {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">                    for (Node neighbour: currentNode.getNeighbours()) {</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">                        if (!noticed[neighbour.getRow()][neighbour.getCol()]) {</span>
+                            /** if neighbour locates in impassable terrain, mark it as noticed BUT do not add to queue */
+<span class="fc bfc" id="L64" title="All 2 branches covered.">                            if (neighbour.getType().equals(&quot;@&quot;)) {</span>
+<span class="fc" id="L65">                                noticed[neighbour.getRow()][neighbour.getCol()] = true;</span>
+                            /** if neighbour locates in timbered terrain, mark it as noticed AND add to queue AND increase path length by 1, cost by 5 */    
+<span class="fc bfc" id="L67" title="All 2 branches covered.">                            } else if(neighbour.getType().equals(&quot;T&quot;)) {</span>
+<span class="fc" id="L68">                                neighbour.setPathLength(currentNode.getPathLength() +1);</span>
+<span class="fc" id="L69">                                neighbour.setPathCost(currentNode.getPathCost() +5);</span>
+<span class="fc" id="L70">                                neighbour.setDistanceFromFinish(finish);</span>
+<span class="fc" id="L71">                                queue.add(neighbour);</span>
+<span class="fc" id="L72">                                noticed[neighbour.getRow()][neighbour.getCol()] = true;</span>
+                            /** if neighbour locates in passable terrain, mark it as noticed AND set its distance from finish node AND add to queue AND increase path length and cost by 1 */    
+                            } else {
+<span class="fc" id="L75">                                neighbour.setPathLength(currentNode.getPathLength() +1);</span>
+<span class="fc" id="L76">                                neighbour.setPathCost(currentNode.getPathCost() +1);</span>
+<span class="fc" id="L77">                                neighbour.setDistanceFromFinish(finish);</span>
+<span class="fc" id="L78">                                queue.add(neighbour);</span>
+<span class="fc" id="L79">                                noticed[neighbour.getRow()][neighbour.getCol()] = true;</span>
+                            }
+                        }
+<span class="fc" id="L82">                    }</span>
+                    /** increase count of nodes visited by 1 */   
+<span class="fc" id="L84">                    nodesVisited += 1;</span>
+                }
+            }
+        }   
+<span class="fc" id="L88">    } </span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
