@@ -8,11 +8,12 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 
 ## Viikkoraportit
 
-* [Viikko 1](./documentation/weeklyreport1.md)
-* [Viikko 2](./documentation/weeklyreport2.md)
-* [Viikko 3](./documentation/weeklyreport3.md)
-* [Viikko 4](./documentation/weeklyreport4.md)
-* [Viikko 5](./documentation/weeklyreport5.md)
+* [Viikko 1](./documentation/reports/weeklyreport1.md)
+* [Viikko 2](./documentation/reports/weeklyreport2.md)
+* [Viikko 3](./documentation/reports/weeklyreport3.md)
+* [Viikko 4](./documentation/reports/weeklyreport4.md)
+* [Viikko 5](./documentation/reports/weeklyreport5.md)
+* [Viikko 6](./documentation/reports/weeklyreport6.md)
 
 ## Dokumentaatio
 

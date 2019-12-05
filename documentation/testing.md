@@ -4,6 +4,5 @@ Ohjelmalle on toteutettu automaattisia JUnit yksikkötestejä.
 
 # Testien kattavuus
 
-Jacocon testikattavuus-raportti
+![Jacocon testikattavuus-raportti](./reports/jacoco.png)
 
-![Jacocon testikattavuus-raportti](./jacoco/test/html/index.html)
