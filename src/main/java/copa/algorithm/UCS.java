@@ -52,8 +52,7 @@ public class UCS {
                 if (currentNode.getType().equals("F")) {
                     System.out.println("GOAL " + currentNode + " REACHED! " 
                             + "\nNodes visited: " +nodesVisited 
-                            + "\nPath cost: " +currentNode.getPathCost() 
-                            + "\nPath length: " +currentNode.getPathLength());
+                            + "\nPath cost: " +currentNode.getPathCost());
                     break;
                 /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
                 } else {
