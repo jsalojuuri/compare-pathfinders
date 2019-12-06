@@ -34,12 +34,12 @@ public class MapGraphTest {
     
     @Test
     public void searchStartNode() throws Exception {
-        assertEquals("S",mapGraph.searchStartNode().getType());
+        assertEquals("S", mapGraph.searchStartNode().getType());
     }
     
     @Test
     public void searchFinishNode() throws Exception {
-        assertEquals("F",mapGraph.searchFinishNode().getType());
+        assertEquals("F", mapGraph.searchFinishNode().getType());
     }
     
     @Test

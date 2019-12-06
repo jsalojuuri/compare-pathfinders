@@ -31,8 +31,8 @@ public class BFSTest {
     @Test
     public void algoSetupWorks() {
         bfs.algoSetup();
-        assertEquals(1,bfs.queue.size());
-        assertEquals(true,bfs.noticed[bfs.start.getRow()][bfs.start.getCol()]);
+        assertEquals(1, bfs.queue.size());
+        assertEquals(true, bfs.noticed[bfs.start.getRow()][bfs.start.getCol()]);
     }
     
     @Test

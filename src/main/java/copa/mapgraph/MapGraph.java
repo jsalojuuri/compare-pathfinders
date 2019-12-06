@@ -38,10 +38,10 @@ public class MapGraph {
         /** creates 2D Node array */
         try (Scanner s = new Scanner(new FileReader(mapFile))) {
             while (s.hasNextLine()) {
-                for (int i=0; i<mapGraph.length; i++) {
+                for (int i = 0; i < mapGraph.length; i++) {
                     String[] line = s.nextLine().trim().split("");
-                    for (int j=0; j<mapGraph[0].length; j++) {
-                        mapGraph[i][j] = new Node(i,j,line[j]);
+                    for (int j = 0; j < mapGraph[0].length; j++) {
+                        mapGraph[i][j] = new Node(i, j, line[j]);
                     }
                 }
             }
@@ -49,34 +49,22 @@ public class MapGraph {
     }
     
     public void createNodeNeigbours() {    
-        for (int i=0; i<mapGraph.length; i++) {
-            for (int j=0; j<mapGraph[0].length; j++) {
+        for (int i = 0; i < mapGraph.length; i++) {
+            for (int j = 0; j < mapGraph[0].length; j++) {
                 List<Node> neighbours = new ArrayList<>();
                 
-                if (i+1<mapGraph.length) {
-                    neighbours.add(mapGraph[i+1][j]);
+                if (i + 1 < mapGraph.length) {
+                    neighbours.add(mapGraph[i + 1][j]);
                 }
-                if (i-1>=0) {
-                    neighbours.add(mapGraph[i-1][j]);
+                if (i - 1 >= 0) {
+                    neighbours.add(mapGraph[i - 1][j]);
                 }
-                if (j+1<mapGraph[0].length) {
-                    neighbours.add(mapGraph[i][j+1]);
+                if (j + 1 < mapGraph[0].length) {
+                    neighbours.add(mapGraph[i][j + 1]);
                 }
-                if (j-1>=0) {
-                    neighbours.add(mapGraph[i][j-1]);
-                }
-                if (i+1<mapGraph.length && j+1<mapGraph[0].length) {
-                    neighbours.add(mapGraph[i+1][j+1]);
-                }
-                if (i-1>=0 && j-1>=0) {
-                    neighbours.add(mapGraph[i-1][j-1]);
-                }
-                if (i-1>=0 && j+1<mapGraph[0].length) {
-                    neighbours.add(mapGraph[i-1][j+1]);
-                }
-                if (i+1<mapGraph.length && j-1>=0) {
-                    neighbours.add(mapGraph[i+1][j-1]);
-                }            
+                if (j - 1 >= 0) {
+                    neighbours.add(mapGraph[i][j - 1]);
+                }          
                 mapGraph[i][j].setNeighbours(neighbours);
             }
         }
@@ -85,7 +73,7 @@ public class MapGraph {
     /** prints map from 2D-array */
     public void printMapFromGraph() {
         for (Node[] mapGraph1 : mapGraph) {
-            for (int j = 0; j<mapGraph[0].length; j++) {
+            for (int j = 0; j < mapGraph[0].length; j++) {
                 System.out.print(mapGraph1[j].getType());
             }
             System.out.println("");
@@ -110,11 +98,11 @@ public class MapGraph {
         return this.finish;
     }
     
-    /** sets 
+    /** sets random start and finish nodes
      * @param maxRow max array length
      * @param maxCol max array[0] length
      * @param nodeType node type
-     * random start and finish nodes */
+     */
     private void setRandomPassableTerrainNodeType(int maxRow, int maxCol, String nodeType) {     
         int row;
         int col;

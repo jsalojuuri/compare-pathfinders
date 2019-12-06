@@ -51,17 +51,19 @@ public class TextUI implements UI {
                 System.out.println("\nBFS:");
                 BFS bfs = new BFS(mapGraph);
                 bfs.startAlgorithm();
+                
                 System.out.println("\nUCS:");
                 UCS ucs = new UCS(mapGraph);
                 ucs.startAlgorithm();
+                
                 System.out.println("\nGBF:");
                 GBF gbf = new GBF(mapGraph);
                 gbf.startAlgorithm();
+                
                 System.out.println("\nA*");
                 AStar astar = new AStar(mapGraph);
                 astar.startAlgorithm();
                 System.out.println("");
-                
             }
             
             if (input.equals("q")) {

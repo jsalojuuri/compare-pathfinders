@@ -25,7 +25,7 @@ public class NodeTest {
     
     @Before
     public void setUp() {
-        basicNode = new Node(1,2,".");
+        basicNode = new Node(1, 2, ".");
     }
     
     @Test
@@ -35,11 +35,11 @@ public class NodeTest {
     
     @Test
     public void basicGettersWorkForNewNode() {
-        assertEquals(1,basicNode.getRow());
-        assertEquals(2,basicNode.getCol());
-        assertEquals(".",basicNode.getType());
-        assertEquals(0,basicNode.getPathLength());
-        assertEquals(0,basicNode.getPathCost());
+        assertEquals(1, basicNode.getRow());
+        assertEquals(2, basicNode.getCol());
+        assertEquals(".", basicNode.getType());
+        assertEquals(0, basicNode.getPathLength());
+        assertEquals(0, basicNode.getPathCost());
     }
     
     @Test
@@ -48,43 +48,49 @@ public class NodeTest {
         basicNode.setCol(3);
         basicNode.setType("S"); 
         
-        assertEquals(2,basicNode.getRow());
-        assertEquals(3,basicNode.getCol());
-        assertEquals("S",basicNode.getType());
+        assertEquals(2, basicNode.getRow());
+        assertEquals(3, basicNode.getCol());
+        assertEquals("S", basicNode.getType());
     }
     
     @Test
     public void pathLength() {
         int currentPathLength = basicNode.getPathLength();
-        basicNode.setPathLength(currentPathLength +1);
+        basicNode.setPathLength(currentPathLength + 1);
         basicNode.increasePathLength();
-        assertEquals(2,basicNode.getPathLength());
+        assertEquals(2, basicNode.getPathLength());
     }
     
     @Test
     public void pathCost() {
         int currentPathCost = basicNode.getPathCost();
-        basicNode.setPathCost(currentPathCost +5);
-        assertEquals(5,basicNode.getPathCost());
+        basicNode.setPathCost(currentPathCost + 5);
+        assertEquals(5, basicNode.getPathCost());
     }
     
     @Test
     public void toStringWorks() {
-        assertEquals("(1,2) .",basicNode.toString());
+        assertEquals("(1,2) .", basicNode.toString());
     }
     
     @Test
     public void distanceToFinishWorks() {
-        Node start = new Node(1,3,"S");
-        Node finish = new Node(1,4,"F");
+        Node start = new Node(1, 3, "S");
+        Node finish = new Node(1, 4, "F");
         start.setDistanceFromFinish(finish);
-        assertEquals(1.0, start.getDistanceFromFinish(), 0.01);
+        assertEquals(1, start.getDistanceFromFinish());
+        
+        start = new Node(1, 3, "S");
+        finish = new Node(3, 5, "F");
+        start.setDistanceFromFinish(finish);
+        assertEquals(4, start.getDistanceFromFinish());
+        
     }
     
     @Test
     public void setAndGetNeighboursWorks() {
-        Node start = new Node(1,3,"S");
-        Node finish = new Node(1,4,"F");
+        Node start = new Node(1, 3, "S");
+        Node finish = new Node(1, 4, "F");
         List<Node> neighbours = new ArrayList<>();
         neighbours.add(finish);
         start.setNeighbours(neighbours);

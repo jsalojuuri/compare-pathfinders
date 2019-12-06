@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package copa.mapgraph;
 
 import java.util.ArrayList;
@@ -18,16 +13,16 @@ public class Node {
     private String type;
     private int pathLength;
     private int pathCost;
-    private double distanceFromFinish;
+    private int distanceFromFinish;
     private List<Node> neighbours;
     
-    public Node (int row, int col, String type) {       
+    public Node (int row, int col, String type) {
         this.row = row;
         this.col = col;
         this.type = type;
         this.pathLength = 0;
         this.pathCost = 0;
-        this.distanceFromFinish = Double.MAX_VALUE;
+        this.distanceFromFinish = 0;
         this.neighbours = new ArrayList<>();       
     }
 
@@ -71,16 +66,15 @@ public class Node {
         this.pathCost = pathCost;
     }
 
-    public double getDistanceFromFinish() {
+    public int getDistanceFromFinish() {
         return distanceFromFinish;
     }
 
-    /** calculates Euclidean distance between current and finish node 
+    /** calculates Manhattan distance between current and finish node 
      * @param finishNode last node of the path
      */
     public void setDistanceFromFinish(Node finishNode) {
-        this.distanceFromFinish = Math.sqrt( (this.getRow()-finishNode.getRow()) * (this.getRow()-finishNode.getRow()) 
-                + (this.getCol()-finishNode.getCol()) * (this.getCol()-finishNode.getCol()) );
+        this.distanceFromFinish = Math.abs(finishNode.getRow() - this.getRow()) + Math.abs(finishNode.getCol() - this.getCol()); 
     }
 
     public List<Node> getNeighbours() {
@@ -92,11 +86,11 @@ public class Node {
     }
     
     public void increasePathLength() {
-        this.pathLength ++;
+        this.pathLength++;
     }
 
     @Override
     public String toString() {
-        return "("+row+","+col+") " +type;
+        return "(" + row + "," + col + ") " + type;
     }   
 }

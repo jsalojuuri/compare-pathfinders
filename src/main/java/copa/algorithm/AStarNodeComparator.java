@@ -16,10 +16,10 @@ public class AStarNodeComparator implements Comparator<Node> {
      */
     @Override
     public int compare(Node node1, Node node2) {
-        if ((node1.getDistanceFromFinish() + node1.getPathCost()) > node2.getDistanceFromFinish() + node2.getPathCost()) {
+        if ((node1.getDistanceFromFinish() + node1.getPathCost()) > (node2.getDistanceFromFinish() + node2.getPathCost())) {
             return 1;
         }
-        if ((node1.getDistanceFromFinish() + node1.getPathCost()) < node2.getDistanceFromFinish() + node2.getPathCost()) {
+        if ((node1.getDistanceFromFinish() + node1.getPathCost()) < (node2.getDistanceFromFinish() + node2.getPathCost())) {
             return -1;
         }
         return 0;

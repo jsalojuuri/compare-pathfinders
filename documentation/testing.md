@@ -12,9 +12,9 @@ Pää- ja käyttöliittymäluokkia ei testata.
 
 ![Jacocon testikattavuus-raportti, copa.algorithm](./reports/jacoco/jacoco_algorithm.png)
 
-Tästä paketista löytyy vertailtavien algoritmien Java-luokat ja kolmen algortimin osalta myös Comparator-luokat. Rivikattavuus yli 90%. Kaikissa metodeissa on testausta, mutta joitakin haaroja on käymättä läpi.
+Tästä paketista löytyy vertailtavien algoritmien luokat ja kolmen algortimin osalta myös Comparator-luokat. Rivikattavuus yli 90%. Kaikissa metodeissa on testausta, mutta joitakin haaroja on käymättä läpi.
 
-## Kartta ja solmu-luokkien yksikkötestit
+## Kartta- ja solmu-luokkien yksikkötestit
 
 ![Jacocon testikattavuus-raportti, copa.mapgraph](./reports/jacoco/jacoco_mapgraph.png)
 
@@ -41,6 +41,6 @@ Testi #2 | 5419  | 5008  | 114 | 441
 
 Jo näistä testeistä näkee, että A*- ja UCS-algoritmit tuottavat edullisimman, eli lyhyimmän polun. GBF-algoritmi taas tuottaa lähes poikkeuksetta kalleimman polun.
 
-GBF-tutkii ylivoimaisesti vähiten solmuja, toisin sanoen sen suoritusaika on algoritmeista nopein. BFS tutkii poikkeuksetta eniten solmuja, hieman enemmän kuin UCS. A* sen sijaan sijoittuu ääripäiden välimaastoon, kuitenkin selvästi lähemmäksi GBF-algoritmia kuin ensiksi mainittuja.
+GBF tutkii ylivoimaisesti vähiten solmuja, toisin sanoen sen suoritusaika on algoritmeista nopein. BFS tutkii poikkeuksetta eniten solmuja, hieman enemmän kuin UCS. A* sen sijaan sijoittuu ääripäiden välimaastoon, kuitenkin selvästi lähemmäksi GBF-algoritmia kuin ensiksi mainittuja.
 
-Kasvatan vertailua myöhemmin, mutta jo nyt näkee, että A* tuottaa optimaalisimman kokonaisuuden. Se tuottaa UCS-algoritmin tavoin kustannuksiltaan edullisimman polun, mutta sen suositusnopeus on huomattavasti parempi kuin UCS:n. Vaikka se häviää suoritusnopeudessa GBF:lle, tuottaa se kuitenkin tätä huomattavasti edullisemman polun. 
+Kasvatan vertailua myöhemmin, mutta jo nyt näkee, että A* tuottaa optimaalisimman kokonaisuuden. Se tuottaa UCS-algoritmin tavoin kustannuksiltaan edullisimman polun, mutta sen suoritusnopeus on huomattavasti parempi kuin UCS:n. Vaikka se häviää suoritusnopeudessa GBF:lle, tuottaa se kuitenkin tätä huomattavasti edullisemman polun. 

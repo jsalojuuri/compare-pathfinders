@@ -26,11 +26,12 @@ public class GBFNodeComparatorTest {
     
     @Test
     public void compareWorks() throws Exception {
-        Node finish = mapGraph.searchFinishNode();
-        Node node1 = mapGraph.searchStartNode();
-        node1.setDistanceFromFinish(finish);
-        assertEquals(-1,gbfNodeComparator.compare(node1, finish));
-        assertEquals(1,gbfNodeComparator.compare(finish, node1));
-        assertEquals(0,gbfNodeComparator.compare(node1, node1));
+        Node node1 = mapGraph.searchFinishNode();
+        Node node2 = mapGraph.searchStartNode();
+        node1.setDistanceFromFinish(node1);
+        node2.setDistanceFromFinish(node1);
+        assertEquals(-1, gbfNodeComparator.compare(node1, node2));
+        assertEquals(1, gbfNodeComparator.compare(node2, node1));
+        assertEquals(0, gbfNodeComparator.compare(node1, node1));
     }
 }

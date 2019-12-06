@@ -16,6 +16,7 @@ public class UCSNodeComparator implements Comparator<Node> {
      */
     @Override
     public int compare(Node node1, Node node2) {
+
         if (node1.getPathCost() > node2.getPathCost()) {
             return 1;
         }

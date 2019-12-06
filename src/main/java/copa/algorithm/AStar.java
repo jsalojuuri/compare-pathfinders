@@ -2,8 +2,7 @@ package copa.algorithm;
 
 import copa.mapgraph.Node;
 import copa.mapgraph.MapGraph;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import copa.utils.PriorityQueue;
 
 /**
   * A* Algorithm for selected map.
@@ -17,7 +16,7 @@ public class AStar {
     Node finish;
     boolean [][] visited; 
     boolean [][] noticed;
-    Queue<Node> queue;
+    PriorityQueue<Node> queue;
     Node currentNode;
     
     public AStar(MapGraph mapGraph) {   
@@ -51,8 +50,8 @@ public class AStar {
                 /** if current node equals to finish node, report statistics and end loop */
                 if (currentNode.getType().equals("F")) {
                     System.out.println("GOAL " + currentNode + " REACHED! " 
-                            + "\nNodes visited: " +nodesVisited 
-                            + "\nPath cost: " +currentNode.getPathCost()); 
+                            + "\nNodes visited: " + nodesVisited 
+                            + "\nPath cost: " + currentNode.getPathCost()); 
                     break;
                 /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
                 } else {
@@ -62,16 +61,16 @@ public class AStar {
                             if (neighbour.getType().equals("@")) {
                                 noticed[neighbour.getRow()][neighbour.getCol()] = true;
                             /** if neighbour locates in timbered terrain, mark it as noticed AND set its distance from finish node AND add to queue AND increase path length by 1, cost by 5 */    
-                            } else if(neighbour.getType().equals("T")) {
-                                neighbour.setPathLength(currentNode.getPathLength() +1);
-                                neighbour.setPathCost(currentNode.getPathCost() +5);
+                            } else if (neighbour.getType().equals("T")) {
+                                neighbour.setPathLength(currentNode.getPathLength() + 1);
+                                neighbour.setPathCost(currentNode.getPathCost() + 5);
                                 neighbour.setDistanceFromFinish(finish);
                                 queue.add(neighbour);
                                 noticed[neighbour.getRow()][neighbour.getCol()] = true;
                             /** if neighbour locates in passable terrain, mark it as noticed AND set its distance from finish node AND add to queue AND increase path length by 1, cost by 1 */    
                             } else {
-                                neighbour.setPathLength(currentNode.getPathLength() +1);
-                                neighbour.setPathCost(currentNode.getPathCost() +1);
+                                neighbour.setPathLength(currentNode.getPathLength() + 1);
+                                neighbour.setPathCost(currentNode.getPathCost() + 1);
                                 neighbour.setDistanceFromFinish(finish);
                                 queue.add(neighbour);
                                 noticed[neighbour.getRow()][neighbour.getCol()] = true;

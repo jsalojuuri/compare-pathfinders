@@ -31,13 +31,11 @@ public class GBFTest {
     @Test
     public void algoSetupWorks() {
         gbf.algoSetup();
-        assertEquals(1,gbf.queue.size());
-        assertEquals(true,gbf.noticed[gbf.start.getRow()][gbf.start.getCol()]);
+        assertEquals(true, gbf.noticed[gbf.start.getRow()][gbf.start.getCol()]);
     }
     
     @Test
     public void currentNodeNotNullWhenAlgoStarted() {
-        gbf.algoSetup();
         gbf.startAlgorithm();
         assertNotNull(gbf.currentNode);
     }

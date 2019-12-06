@@ -29,8 +29,8 @@ public class UCSNodeComparatorTest {
         Node node1 = mapGraph.searchFinishNode();
         Node node2 = mapGraph.searchStartNode();
         node2.setPathCost(10);
-        assertEquals(-1,ucsNodeComparator.compare(node1, node2));
-        assertEquals(1,ucsNodeComparator.compare(node2, node1));
-        assertEquals(0,ucsNodeComparator.compare(node1, node1));
+        assertEquals(-1, ucsNodeComparator.compare(node1, node2));
+        assertEquals(1, ucsNodeComparator.compare(node2, node1));
+        assertEquals(0, ucsNodeComparator.compare(node1, node1));
     }
 }

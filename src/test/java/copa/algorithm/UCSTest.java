@@ -31,13 +31,11 @@ public class UCSTest {
     @Test
     public void algoSetupWorks() {
         ucs.algoSetup();
-        assertEquals(1,ucs.queue.size());
-        assertEquals(true,ucs.noticed[ucs.start.getRow()][ucs.start.getCol()]);
+        assertEquals(true, ucs.noticed[ucs.start.getRow()][ucs.start.getCol()]);
     }
     
     @Test
     public void currentNodeNotNullWhenAlgoStarted() {
-        ucs.algoSetup();
         ucs.startAlgorithm();
         assertNotNull(ucs.currentNode);
     }

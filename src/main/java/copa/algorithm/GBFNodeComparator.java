@@ -16,6 +16,7 @@ public class GBFNodeComparator implements Comparator<Node> {
      */
     @Override
     public int compare(Node node1, Node node2) {
+        
         if (node1.getDistanceFromFinish() > node2.getDistanceFromFinish()) {
             return 1;
         }
@@ -23,5 +24,6 @@ public class GBFNodeComparator implements Comparator<Node> {
             return -1;
         }
         return 0;
+        
     }
 }
