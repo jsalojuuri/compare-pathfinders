@@ -4,9 +4,11 @@ Ohjelmalle on toteutettu automaattisia JUnit yksikkötestejä ja algoritmien suo
 
 ## Yksikkötestien kattavuus
 
+Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa komentorivillä käskyn ``./gradlew test jacocoTestReport`` ja avaamalla selaimeesi kansioon ./build/reports/jacoco/test/html generoidun html-pohjaisen raportin.
+
 ![Jacocon testikattavuus-raportti](./reports/jacoco/jacoco.png)
 
-Pää- ja käyttöliittymäluokkia ei testata.
+Pää- ja käyttöliittymäluokkia ei testata, joten testien rivikattavuus on yli 90% ja suurin osa eri haaroista myös testataan.
 
 ## Algoritmien yksikkötestit
 
