@@ -36,7 +36,7 @@ public class PriorityQueueTest {
     
     @Test
     public void constructorWorks() {
-        assertEquals(0, gbfPriorityQueue.getSize());
+        assertEquals(0, gbfPriorityQueue.size());
         assertEquals(true, gbfPriorityQueue.isEmpty());
     }
     
@@ -46,9 +46,9 @@ public class PriorityQueueTest {
         node2.setDistanceFromFinish(node2);
         gbfPriorityQueue.add(node1);
         gbfPriorityQueue.add(node2);
-        assertEquals(2, gbfPriorityQueue.getSize());
+        assertEquals(2, gbfPriorityQueue.size());
         Node node3 = gbfPriorityQueue.poll();
-        assertEquals(1, gbfPriorityQueue.getSize());
+        assertEquals(1, gbfPriorityQueue.size());
         assertEquals(0, node3.getDistanceFromFinish());
     }
     
@@ -58,9 +58,9 @@ public class PriorityQueueTest {
         node2.setPathCost(1);
         ucsPriorityQueue.add(node1);
         ucsPriorityQueue.add(node2);
-        assertEquals(2, ucsPriorityQueue.getSize());
+        assertEquals(2, ucsPriorityQueue.size());
         Node node3 = ucsPriorityQueue.poll();
-        assertEquals(1, ucsPriorityQueue.getSize());
+        assertEquals(1, ucsPriorityQueue.size());
         assertEquals(1, node3.getPathCost());
     }
 }

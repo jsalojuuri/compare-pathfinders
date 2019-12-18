@@ -2,8 +2,9 @@ package copa.util;
 
 import java.util.Comparator;
 
-/** Self made version of Java's PriorityQueue data structure
+/** Self made version of Java PriorityQueue data structure. Only methods that are required in this application are implemented.
  * @author Jari Salojuuri
+ * @param <T> Type of element that is defined when PriorityQueue instance is created.
  */
 public class PriorityQueue<T> {
     
@@ -11,26 +12,26 @@ public class PriorityQueue<T> {
     private T[] values;
     private Comparator comparator;
     
-    /** Constructor to initialise PriorityQueue object 
-     * 
+    /**  
+     * Constructor to initialise PriorityQueue object
      * @param comparator object that compares queue's values
      */
     public PriorityQueue(Comparator comparator) {
         this.size = 0;
-        this.values = (T[]) new Object[8];
+        this.values = (T[]) new Object[5];
         this.comparator = comparator;
     }
     
-    /** Returns the amount of value in queue 
-     * 
+    /** 
+     * Returns the amount of value in queue 
      * @return queue size
      */
-    public int getSize() {
+    public int size() {
         return this.size;
     }
     
-    /** Checks if size is empty 
-     * 
+    /**  
+     * Checks if size is empty
      * @return true if queue size is 0, else false
      */
     public boolean isEmpty() {
@@ -46,8 +47,8 @@ public class PriorityQueue<T> {
         this.values = newValues;
     }
     
-    /** Swaps two indexes
-     * 
+    /** 
+     * Swaps two indexes
      * @param index1 first index
      * @param index2 second index
      */
@@ -57,8 +58,8 @@ public class PriorityQueue<T> {
         this.values[index2] = t;
     }
     
-    /** Finds right priority for given value. Swaps child and parent, if child has greater priority
-     * 
+    /** 
+     * Finds right priority for given value. Swaps child and parent, if child has greater priority
      * @param lastChildIndex the last index that has a value set = size of values array
      * @param value value to be added in queue
      */
@@ -70,8 +71,8 @@ public class PriorityQueue<T> {
         }
     }
     
-    /** Adds new value to queue
-     * 
+    /** 
+     * Adds new value to queue
      * @param value value to be added
      */
     public void add(T value) {
@@ -82,8 +83,8 @@ public class PriorityQueue<T> {
         findValuePriority(this.size, value);
     }
     
-    /** Finds left child index based on given parent index
-     * 
+    /** 
+     * Finds left child index based on given parent index
      * @param parentIndex parent index
      * @return left child index
      */
@@ -91,8 +92,8 @@ public class PriorityQueue<T> {
         return 2 * parentIndex;
     }
     
-    /** Finds right child index based on given parent index
-     * 
+    /** 
+     * Finds right child index based on given parent index
      * @param parentIndex parent index
      * @return right child index
      */
@@ -100,8 +101,8 @@ public class PriorityQueue<T> {
         return 2 * parentIndex + 1;
     }
     
-    /** Finds parent index based on given children index
-     * 
+    /** 
+     * Finds parent index based on given children index
      * @param childIndex parent index
      * @return parent index
      */
@@ -109,8 +110,8 @@ public class PriorityQueue<T> {
         return childIndex / 2;
     }
     
-    /** Compares value in given index with its children and pushes it down if it is greater
-     * 
+    /** 
+     * Compares value in given index with its children and pushes it down if it is greater
      * @param index index to be checked 
      */
     private void pushDownValueOf(int index) {
@@ -130,8 +131,8 @@ public class PriorityQueue<T> {
         }
     }
     
-    /** Poll's minimum value from queue
-     * 
+    /** 
+     * Polls minimum value from queue
      * @return minimum value
      */
     public T poll() {

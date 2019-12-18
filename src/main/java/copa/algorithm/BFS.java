@@ -2,7 +2,7 @@ package copa.algorithm;
 
 import copa.mapgraph.Node;
 import copa.mapgraph.MapGraph;
-import java.util.ArrayDeque;
+import copa.util.ArrayDeque;
 
    /**
      * Breath First Algorithm for selected map.
