@@ -6,4 +6,4 @@
 ## Ohjelman käynnistäminen komentoriviltä
 
 3. Sovelluksen build-ohjelmistona on käytetty Gradlen versiota 5.6. Lue Gradlen käyttöönotosta tarkemmin [täältä](https://gradle.org/install/).
-4. Ohjelmaa ei tarvitse erikseen kääntää, vaan sen voi käynnistää suoraan komentoriviltä komennolla ``./gradlew run``. Gradle ensin kääntää lähdekoodin binäärimuotoon, jonka jälkeen näet ruudulla ohjelman käyttöliittymän
+4. Ohjelmaa ei tarvitse erikseen kääntää, vaan sen voi käynnistää suoraan komentoriviltä komennolla ``./gradlew run``. Gradle ensin kääntää lähdekoodin binäärimuotoon, jonka jälkeen näet ruudulla ohjelman käyttöliittymän.

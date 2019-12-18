@@ -1,8 +1,8 @@
 # Testausdokumentti
 
-Ohjelmalle on toteutettu automaattisia JUnit yksikkötestejä ja algoritmien suorituskykyä on vertailtu.
+Ohjelmalle on toteutettu automaattisia JUnit yksikkö- ja integraatiotestejä, testien rivi- ja haaraumakattavuus on raportoitu JaCoCo:n avulla.
 
-## Yksikkötestien kattavuus
+## Testauksen kattavuus
 
 Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa komentorivillä käskyn ``./gradlew test jacocoTestReport`` ja avaamalla selaimeesi kansioon ./build/reports/jacoco/test/html generoidun html-pohjaisen raportin.
 
@@ -10,7 +10,7 @@ Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa kom
 
 Pää- ja käyttöliittymäluokkia ei testata, joten testien rivikattavuus on yli 90% ja suurin osa eri haaroista myös testataan.
 
-## Algoritmien yksikkötestit
+## Algoritmien testit
 
 ![Jacocon testikattavuus-raportti, copa.algorithm](./reports/jacoco/jacoco_algorithm.png)
 
@@ -20,29 +20,8 @@ Tästä paketista löytyy vertailtavien algoritmien luokat ja kolmen algortimin 
 
 ![Jacocon testikattavuus-raportti, copa.mapgraph](./reports/jacoco/jacoco_mapgraph.png)
 
-Tästä paketista löytyy MapGraph-luokka, jolla ASCII-tiedosto muokataan verkoksi ja printataan näytölle sekä Node-luokka, joka vastaa karttaruutua eli verkon solmua. Käytännössä kaikki metodit paitsi kartan printtaus on testattu. En ole ehtinyt perehtymään miten saisin testattua tulostuksen toimivuuden.
+Tästä paketista löytyy MapGraph-luokka, jolla ASCII-tiedosto muokataan verkoksi ja printataan näytölle sekä Node-luokka, joka vastaa karttaruutua eli verkon solmua. Käytännössä kaikki metodit paitsi kartan printtaus on testattu. 
 
-## Algoritmien suorituskykyvertailu
+## Parannettavaa testauksessa
 
-Algoritmeja vertaillaan kahdella metriikalla:
-* **Polun kustannus**: Algoritmin löytämän polun kokonaiskustannus. Tavallisesta ruudusta kertyy yksi kustannuspiste, puun sisältävästä ruudusta 5 pistettä.
-* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee.
-
-Polun kustannus | BFS | UCS | GBF | A*
-----------|----------|----------|----------|----------
-Testi #1 | 474 | 183 | 651 | 183
-Testi #2 | 114 | 114 | 390 | 114
-
-
-
-Solmua tutkittu | BFS | UCS | GBF | A*
-----------|----------|----------|----------|----------
-Testi #1 | 22582 | 21889 | 255 | 3233
-Testi #2 | 5419  | 5008  | 114 | 441
-
-
-Jo näistä testeistä näkee, että A*- ja UCS-algoritmit tuottavat edullisimman, eli lyhyimmän polun. GBF-algoritmi taas tuottaa lähes poikkeuksetta kalleimman polun.
-
-GBF tutkii ylivoimaisesti vähiten solmuja, toisin sanoen sen suoritusaika on algoritmeista nopein. BFS tutkii poikkeuksetta eniten solmuja, hieman enemmän kuin UCS. A* sen sijaan sijoittuu ääripäiden välimaastoon, kuitenkin selvästi lähemmäksi GBF-algoritmia kuin ensiksi mainittuja.
-
-Kasvatan vertailua myöhemmin, mutta jo nyt näkee, että A* tuottaa optimaalisimman kokonaisuuden. Se tuottaa UCS-algoritmin tavoin kustannuksiltaan edullisimman polun, mutta sen suoritusnopeus on huomattavasti parempi kuin UCS:n. Vaikka se häviää suoritusnopeudessa GBF:lle, tuottaa se kuitenkin tätä huomattavasti edullisemman polun. 
+En ehtinyt perehtymään miten saisin testattua kartan tulostuksen toimivuuden, tämä jäi vielä tulevaisuuden opiskelulistalle.
