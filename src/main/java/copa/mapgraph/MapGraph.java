@@ -1,12 +1,13 @@
 
 package copa.mapgraph;
 
+import copa.util.ArrayList;
+
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
 
    /**
      * MapGraph object that creates a 2D array out of map files.
@@ -19,7 +20,7 @@ public class MapGraph {
     public Node start;
     public Node finish;
     
-    /** Constructor for MapGraph
+    /** Constructor for MapGraph instance
      * @param mapFile .map file from https://movingai.com/benchmarks/grids.html.
      * @throws java.lang.Exception
      */
@@ -51,7 +52,7 @@ public class MapGraph {
     public void createNodeNeigbours() {    
         for (int i = 0; i < mapGraph.length; i++) {
             for (int j = 0; j < mapGraph[0].length; j++) {
-                List<Node> neighbours = new ArrayList<>();
+                ArrayList<Node> neighbours = new ArrayList<>();
                 
                 if (i + 1 < mapGraph.length) {
                     neighbours.add(mapGraph[i + 1][j]);

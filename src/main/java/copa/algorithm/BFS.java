@@ -3,7 +3,6 @@ package copa.algorithm;
 import copa.mapgraph.Node;
 import copa.mapgraph.MapGraph;
 import java.util.ArrayDeque;
-import java.util.Queue;
 
    /**
      * Breath First Algorithm for selected map.
@@ -16,7 +15,7 @@ public class BFS {
     Node start;
     boolean [][] visited;
     boolean [][] noticed;
-    Queue<Node> queue;
+    ArrayDeque<Node> queue;
     Node currentNode;
     
     public BFS(MapGraph mapGraph) {
@@ -54,7 +53,8 @@ public class BFS {
                     break;
                 /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
                 } else {
-                    for (Node neighbour: currentNode.getNeighbours()) {
+                    for (int i = 0; i < currentNode.getNeighbours().getSize(); i++) {
+                        Node neighbour = currentNode.getNeighbour(i);
                         if (!noticed[neighbour.getRow()][neighbour.getCol()]) {
                             /** if neighbour locates in impassable terrain, mark it as noticed BUT do not add to queue */
                             if (neighbour.getType().equals("@")) {

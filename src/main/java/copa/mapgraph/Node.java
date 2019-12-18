@@ -1,10 +1,9 @@
 package copa.mapgraph;
 
-import java.util.ArrayList;
-import java.util.List;
+import copa.util.ArrayList;
 
 /**
- *
+ * Node object that is required by MapGraph object
  * @author salojuur
  */
 public class Node {   
@@ -14,8 +13,14 @@ public class Node {
     private int pathLength;
     private int pathCost;
     private int distanceFromFinish;
-    private List<Node> neighbours;
+    private ArrayList<Node> neighbours;
     
+    /**
+     * Constructor for Node instance
+     * @param row horizontal location on map graph
+     * @param col vertical location on map graph
+     * @param type Node type, that can be "." (normal terrain), "T" (tree terrain), "@" (impassable terrain), "S" (start node) or "F" (finish node)
+     */
     public Node (int row, int col, String type) {
         this.row = row;
         this.col = col;
@@ -77,11 +82,15 @@ public class Node {
         this.distanceFromFinish = Math.abs(finishNode.getRow() - this.getRow()) + Math.abs(finishNode.getCol() - this.getCol()); 
     }
 
-    public List<Node> getNeighbours() {
+    public ArrayList<Node> getNeighbours() {
         return neighbours;
     }
+    
+    public Node getNeighbour(int i) {
+        return this.neighbours.get(i);
+    }
 
-    public void setNeighbours(List<Node> neighbours) {
+    public void setNeighbours(ArrayList<Node> neighbours) {
         this.neighbours = neighbours;
     }
     

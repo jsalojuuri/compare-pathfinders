@@ -8,8 +8,8 @@ package copa.mapgraph;
 import copa.mapgraph.Node;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.List;
+import copa.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.Scanner;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -91,7 +91,7 @@ public class NodeTest {
     public void setAndGetNeighboursWorks() {
         Node start = new Node(1, 3, "S");
         Node finish = new Node(1, 4, "F");
-        List<Node> neighbours = new ArrayList<>();
+        ArrayList<Node> neighbours = new ArrayList<>();
         neighbours.add(finish);
         start.setNeighbours(neighbours);
         assertNotNull(start.getNeighbours());

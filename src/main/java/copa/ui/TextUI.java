@@ -6,8 +6,6 @@ import copa.algorithm.BFS;
 import copa.algorithm.GBF;
 import copa.algorithm.UCS;
 import copa.mapgraph.MapGraph;
-import copa.mapgraph.Node;
-import java.util.List;
 import java.util.Scanner;
 
    /**
@@ -16,8 +14,8 @@ import java.util.Scanner;
      */
 public class TextUI implements UI {
     
-    private Scanner scanner;
-    private MapGraph mapGraph;
+    private final Scanner scanner;
+    private final MapGraph mapGraph;
     
     public TextUI(Scanner scanner, MapGraph mapGraph) {
         this.scanner = scanner;

@@ -1,4 +1,4 @@
-package copa.utils;
+package copa.util;
 
 import java.util.Comparator;
 

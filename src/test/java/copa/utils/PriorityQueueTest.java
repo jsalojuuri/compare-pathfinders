@@ -1,5 +1,6 @@
 package copa.utils;
 
+import copa.util.PriorityQueue;
 import copa.algorithm.GBFNodeComparator;
 import copa.algorithm.UCSNodeComparator;
 import copa.mapgraph.MapGraph;
