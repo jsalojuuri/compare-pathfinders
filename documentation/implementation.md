@@ -5,7 +5,7 @@
 * Ohjelmasta löytyy viisi pakettia:
     * **copa.main** pääohjelma
     * **copa.algorithm** sisältää luokat kaikille algoritmeille ja Comparato-luokat niitä tarvitseville algoritmeille
-    * **copa.mapgraph** sisältää luokan MapGraph, joka muuntaa ASCII-kartan verkoksi ja sisältää metodin kartan piirtämiseksi näytölle
+    * **copa.mapgraph** sisältää luokan MapGraph, jossa mm. metodit ASCII-kartan muuntamiseksi verkoksi ja kartan piirtämiseksi näytölle. Lisäksi luokka Node kartan solmuja varten.
     * **copa.ui** Käyttöliittymän vaatimat luokat. Jo luodun yksinkertaisen tekstikäyttöliittymän lisäksi ei ole aikomusta luoda muunlaisia käyttöliittymiä.
     * **copa.utils** sisältää Javan java.utils paketin toteutuksia korvaavia luokkia, kuten PriorityQueue.
 
