@@ -15,28 +15,52 @@
 
 ## Algoritmien suorituskykyvertailu ja O-analyysivertailu
 
-Algoritmeja vertaillaan kahdella metriikalla:
-* **Polun kustannus**: Algoritmin löytämän polun kokonaiskustannus. Tavallisesta ruudusta kertyy yksi kustannuspiste, puun sisältävästä ruudusta 5 pistettä.
-* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee.
 
-Polun kustannus | BFS | UCS | GBF | A*
-----------|----------|----------|----------|----------
-Testi #1 | 474 | 183 | 651 | 183
-Testi #2 | 114 | 114 | 390 | 114
+### Suorituskyvyn arviointiin käytetyt metriikat ja otoskoko
 
+Algoritmien suorituskykyä vertaillaan kahdella metriikalla:
+* **Polun kustannus**: Algoritmin löytämän polun kokonaiskustannus. Tavallisesta ruudusta kertyy yksi kustannuspiste, puun sisältävästä ruudusta 5 pistettä. Algoritmin suorituskyky on aina sitä parempi, mitä pienempi polun kustannus on.
+* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee. Tämän metriikan voi ajatella vertautuvan algoritmin suorittamiseen kuluvaan aikaan. Algoritmin suorituskyky on aina sitä parempi, mitä vähemmän solmuja tutkitaan on.
 
-
-Solmua tutkittu | BFS | UCS | GBF | A*
-----------|----------|----------|----------|----------
-Testi #1 | 22582 | 21889 | 255 | 3233
-Testi #2 | 5419  | 5008  | 114 | 441
+Analyysia varten kaikki algortimit ajettiin 20 kertaan, jotta saatiin tilastollisesti riittävän kattava otos aikaiseksi algoritmien eroista. 
 
 
-Jo näistä testeistä näkee, että A*- ja UCS-algoritmit tuottavat edullisimman, eli lyhyimmän polun. GBF-algoritmi taas tuottaa lähes poikkeuksetta kalleimman polun.
+### Suorituskykytestien tulokset
 
-GBF tutkii ylivoimaisesti vähiten solmuja, toisin sanoen sen suoritusaika on algoritmeista nopein. BFS tutkii poikkeuksetta eniten solmuja, hieman enemmän kuin UCS. A* sen sijaan sijoittuu ääripäiden välimaastoon, kuitenkin selvästi lähemmäksi GBF-algoritmia kuin ensiksi mainittuja.
+[Taulukossa 1](./analysis/taulukko1.png) on metriikkakohtaiset tulokset testeittäin per algoritmi. 
 
-Kasvatan vertailua myöhemmin, mutta jo nyt näkee, että A* tuottaa optimaalisimman kokonaisuuden. Se tuottaa UCS-algoritmin tavoin kustannuksiltaan edullisimman polun, mutta sen suoritusnopeus on huomattavasti parempi kuin UCS:n. Vaikka se häviää suoritusnopeudessa GBF:lle, tuottaa se kuitenkin tätä huomattavasti edullisemman polun.
+![Taulukko 1](./analysis/taulukko1.png)
+
+[Taulukoon 2](./analysis/taulukko2.png) on laskettu kaksi vertailevaa tunnuslukua per metriikka:
+* Algoritmikohtainen keskiarvo 
+* Keskiarvon osuus ryhmän heikoimmasta keskiarvosta. Kaava: ``algoritmin keskiarvo / heikoimman algoritmin keskiarvo`` 
+
+![Taulukko 2](./analysis/taulukko2.png) 
+
+Testien eroja on havainnollistettu kahdella kuvaajalla. 
+
+![Kuvaaja 1](./analysis/kuvaaja1.png)
+
+[Kuvaajasta 1](./analysis/kuvaaja1.png) nähdään tutkittujen solmujen vaihtelu testeittäin per algoritmi.
+
+![Kuvaaja 2](./analysis/kuvaaja2.png)
+
+[Kuvaajasta 2](./analysis/kuvaaja1.png) nähdään polun kustannuksen vaihtelu testeittäin per algoritmi.
+
+
+### Analyysi polkualgoritmien suorituskykyeroista
+
+Suorituskykytestien tulokset olivat ennakko-oletusten mukaisia. 
+
+* Perinteinen leveyshaku (BFS): 
+
+* Dijkstran Uniform Cost Search (UCS) -algoritmi:
+
+* Greedy Best First (GBF) -algoritmi:
+
+* A*-algoritmi
+
+
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
 
