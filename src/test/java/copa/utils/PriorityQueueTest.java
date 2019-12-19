@@ -62,4 +62,10 @@ public class PriorityQueueTest {
         assertEquals(1, ucsPriorityQueue.size());
         assertEquals(1, node3.getPathCost());
     }
+    
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void pollThrowsExceptionIfQueueIsEmpty() {
+        gbfPriorityQueue = new PriorityQueue<>(new GBFNodeComparator());
+        gbfPriorityQueue.poll();
+    }
 }
