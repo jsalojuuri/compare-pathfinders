@@ -28,3 +28,27 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 ## Julkaisut
 
 * [Julkaisu v1.0](https://github.com/jsalojuuri/compare-pathfinders/releases/tag/v1.0)
+
+## Komentorivitoiminnot
+
+### Ohjelman käynnistys
+
+``./gradlew run``
+
+Ohjelma ajaa käynnistyksen yhteydessä Checkstyle-raportit, jotka löydät build-kansion alta.
+
+### Junit-testien ajo
+
+``./gradlew test``
+
+### Jacoco-testikattavuus raportin ajo
+
+``./gradlew test jacocoTestReport``
+
+### Javadocin generointi
+
+``./gradlew javadoc``
+
+### Jarin generointi
+
+``./gradlew jar``
