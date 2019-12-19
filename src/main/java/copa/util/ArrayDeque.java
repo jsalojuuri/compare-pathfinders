@@ -1,7 +1,7 @@
 package copa.util;
 
 /**
- * Self made version of Java ArrayDeque (stack) data structure. Only methods that are required in this application are implemented.
+ * Self made version of Java ArrayDeque data structure. Only methods that are required in this application are implemented.
  * @author salojuur
  * @param <T> Type of element that is defined when ArrayDeque instance is created.
  */
@@ -75,7 +75,6 @@ public class ArrayDeque<T> {
             index++;
         }
         size--;
-
     }
     
 

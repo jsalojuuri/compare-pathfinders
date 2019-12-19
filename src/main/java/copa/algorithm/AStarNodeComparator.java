@@ -3,13 +3,14 @@ package copa.algorithm;
 import copa.mapgraph.Node;
 import java.util.Comparator;
 
-/** Node comparator for A* Search. Uses both path cost from start node and distance to finish node metrics to rank nodes.
- *
+/** 
+ * Node comparator for A* Search. Uses both path cost from start node and distance to finish node metrics to rank nodes.
  * @author salojuur
  */
 public class AStarNodeComparator implements Comparator<Node> {
     
-    /** Compares two nodes based on the sum of path cost from start node and Euclidean distance to finish node.
+    /** 
+     * Compares two nodes based on the sum of path cost from start node and Manhattan distance to finish node.
      * @param node1 first node
      * @param node2 second node
      * @return returns 1 if node 1 sum value is greater than node 2, return -1 if vice versa and 0 if sum values are equal

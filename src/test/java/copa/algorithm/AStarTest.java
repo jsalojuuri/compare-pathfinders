@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Tests for AStar class
  * @author salojuur
  */
 public class AStarTest {

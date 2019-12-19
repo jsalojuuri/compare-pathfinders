@@ -9,7 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- *
+ * Tests for BFS class
  * @author salojuur
  */
 public class BFSTest {

@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Tests for GBF class
  * @author salojuur
  */
 public class GBFTest {

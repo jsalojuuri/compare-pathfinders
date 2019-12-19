@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /**
- *
+ * Main class to run Compare Pathfinders application
  * @author salojuur
  */
 public class Main {

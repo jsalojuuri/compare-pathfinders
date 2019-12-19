@@ -20,7 +20,8 @@ public class MapGraph {
     public Node start;
     public Node finish;
     
-    /** Constructor for MapGraph instance
+    /** 
+     * Constructor for MapGraph instance
      * @param mapFile .map file from https://movingai.com/benchmarks/grids.html.
      * @throws java.lang.Exception
      */
@@ -31,12 +32,12 @@ public class MapGraph {
         setRandomPassableTerrainNodeType(mapGraph.length, mapGraph[0].length, "F");
     }
  
-    /** Creates 2D Node array from map file 
+    /**  
+     * Creates 2D Node array from map file
      * @param mapFile map file
      * @throws java.lang.Exception
      */
     public void create2DNodeArray(File mapFile) throws Exception {
-        /** creates 2D Node array */
         try (Scanner s = new Scanner(new FileReader(mapFile))) {
             while (s.hasNextLine()) {
                 for (int i = 0; i < mapGraph.length; i++) {
@@ -49,6 +50,7 @@ public class MapGraph {
         }
     }
     
+    /** Creates neighbouring nodes for all map nodes */
     public void createNodeNeigbours() {    
         for (int i = 0; i < mapGraph.length; i++) {
             for (int j = 0; j < mapGraph[0].length; j++) {
@@ -71,7 +73,7 @@ public class MapGraph {
         }
     }
     
-    /** prints map from 2D-array */
+    /** Prints map from 2D-array */
     public void printMapFromGraph() {
         for (Node[] mapGraph1 : mapGraph) {
             for (int j = 0; j < mapGraph[0].length; j++) {
@@ -85,21 +87,24 @@ public class MapGraph {
         return mapGraph;
     }
     
-    /** searches starting Node from mapGraph 
+    /** 
+     * Searches starting Node from mapGraph 
      * @return start node
      */
     public Node searchStartNode() {
         return this.start;
     }
     
-    /** searches finish Node from mapGraph 
+    /** 
+     * Searches finish Node from mapGraph 
      * @return finish node
      */
     public Node searchFinishNode() {
         return this.finish;
     }
     
-    /** sets random start and finish nodes
+    /** 
+     * Sets random start and finish nodes
      * @param maxRow max array length
      * @param maxCol max array[0] length
      * @param nodeType node type
@@ -125,7 +130,5 @@ public class MapGraph {
                 break;
             }         
         }
-    }
-    
-    
+    } 
 }

@@ -35,7 +35,7 @@ public class TextUI implements UI {
             
             String input = scanner.nextLine();
 
-            /** prints map */
+            /** Prints map */
             if (input.equals("1")) {
                 mapGraph.printMapFromGraph();
                 System.out.println("\nMAP SIZE: " + mapGraph.mapGraph.length + " rows, "
@@ -44,6 +44,7 @@ public class TextUI implements UI {
                 System.out.println("FINISH NODE coordinates: " + mapGraph.searchFinishNode().toString() + "\n");        
             }   
 
+            /** Compares algorithms */
             if (input.equals("2")) {
                 
                 System.out.println("\nBFS:");
@@ -64,6 +65,7 @@ public class TextUI implements UI {
                 System.out.println("");
             }
             
+            /** Exits program */
             if (input.equals("q")) {
                 System.out.println("Goodbye!");
                 break;

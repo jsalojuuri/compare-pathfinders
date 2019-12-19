@@ -2,7 +2,8 @@ package copa.util;
 
 import java.util.Comparator;
 
-/** Self made version of Java PriorityQueue data structure. Only methods that are required in this application are implemented.
+/** 
+ * Self made version of Java PriorityQueue data structure. Only methods that are required in this application are implemented.
  * @author Jari Salojuuri
  * @param <T> Type of element that is defined when PriorityQueue instance is created.
  */

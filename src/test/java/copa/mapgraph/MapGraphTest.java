@@ -1,6 +1,7 @@
 package copa.mapgraph;
 
 import copa.mapgraph.MapGraph;
+import copa.util.ArrayList;
 import java.io.ByteArrayOutputStream;
 import java.util.Scanner;
 import java.io.File;
@@ -11,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 
 /**
  * Tests for MapGraph class
@@ -46,13 +48,5 @@ public class MapGraphTest {
     public void getMapGraph() throws Exception {
         assertNotNull(mapGraph.getMapGraph());
     }
-    
-    /*
-    @Test
-    public void mapGraphNodesHaveNeighbours() {
-        Node start = mapGraph.searchStartNode();
-        List<Node> neighbours = start.getNeighbours();
-        assertEquals(8,neighbours.size());
-    }
-     */ 
+      
 }

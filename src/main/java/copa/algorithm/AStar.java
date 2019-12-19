@@ -8,7 +8,7 @@ import copa.util.PriorityQueue;
   * A* Algorithm for selected map.
   * @author Jari Salojuuri,
   */
-public class AStar {
+public class AStar implements Algorithm {
     
     MapGraph mapGraph;
     int nodesVisited;
@@ -30,6 +30,7 @@ public class AStar {
     }
 
     /** set starting node distance from finish node and add it to priority queue, set starting node as noticed */
+    @Override
     public void algoSetup() {        
         this.start.setDistanceFromFinish(finish);
         this.queue.add(start);
@@ -37,6 +38,7 @@ public class AStar {
     }
     
     /** starts A* algorithm */
+    @Override
     public void startAlgorithm() {
         
         algoSetup();
@@ -55,7 +57,7 @@ public class AStar {
                     break;
                 /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
                 } else {
-                    for (int i = 0; i < currentNode.getNeighbours().getSize(); i++) {
+                    for (int i = 0; i < currentNode.getNeighbours().size(); i++) {
                         Node neighbour = currentNode.getNeighbour(i);
                         if (!noticed[neighbour.getRow()][neighbour.getCol()]) {
                             /** if neighbour locates in impassable terrain, mark it as noticed BUT do not add to queue */

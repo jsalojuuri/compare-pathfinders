@@ -5,7 +5,7 @@ import copa.mapgraph.MapGraph;
 import copa.util.ArrayDeque;
 
    /**
-     * Breath First Algorithm for selected map.
+     * Breadth First Algorithm for selected map.
      * @author Jari Salojuuri,
      */
 public class BFS {
@@ -53,7 +53,7 @@ public class BFS {
                     break;
                 /** if current node does not equal to finish node, check its neighbours and continue processing them only if they have not been noticed before */
                 } else {
-                    for (int i = 0; i < currentNode.getNeighbours().getSize(); i++) {
+                    for (int i = 0; i < currentNode.getNeighbours().size(); i++) {
                         Node neighbour = currentNode.getNeighbour(i);
                         if (!noticed[neighbour.getRow()][neighbour.getCol()]) {
                             /** if neighbour locates in impassable terrain, mark it as noticed BUT do not add to queue */

@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- *
+ * Tests for AstarNodeComparator class
  * @author salojuur
  */
 public class AStarNodeComparatorTest {

@@ -19,7 +19,7 @@ public class ArrayList<T> {
      * Returns size of the list
      * @return ArrayList size
      */
-    public int getSize() {
+    public int size() {
         return this.size;
     }
     

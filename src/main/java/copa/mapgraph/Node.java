@@ -30,7 +30,19 @@ public class Node {
         this.distanceFromFinish = 0;
         this.neighbours = new ArrayList<>();       
     }
-
+  
+    /**  
+     * Calculates Manhattan distance between current and finish node
+     * @param finishNode last node of the path
+     */
+    public void setDistanceFromFinish(Node finishNode) {
+        this.distanceFromFinish = Math.abs(finishNode.getRow() - this.getRow()) + Math.abs(finishNode.getCol() - this.getCol()); 
+    }
+    
+    public void increasePathLength() {
+        this.pathLength++;
+    }
+    
     public int getRow() {
         return row;
     }
@@ -75,13 +87,6 @@ public class Node {
         return distanceFromFinish;
     }
 
-    /** calculates Manhattan distance between current and finish node 
-     * @param finishNode last node of the path
-     */
-    public void setDistanceFromFinish(Node finishNode) {
-        this.distanceFromFinish = Math.abs(finishNode.getRow() - this.getRow()) + Math.abs(finishNode.getCol() - this.getCol()); 
-    }
-
     public ArrayList<Node> getNeighbours() {
         return neighbours;
     }
@@ -94,10 +99,6 @@ public class Node {
         this.neighbours = neighbours;
     }
     
-    public void increasePathLength() {
-        this.pathLength++;
-    }
-
     @Override
     public String toString() {
         return "(" + row + "," + col + ") " + type;

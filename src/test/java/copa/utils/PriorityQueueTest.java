@@ -11,9 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-
 /**
- *
+ * tests for own PriorityQueue class
  * @author salojuur
  */
 public class PriorityQueueTest {
