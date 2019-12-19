@@ -29,8 +29,15 @@ Algoritmi käy pahimmassa tapauksessa läpi verkon kaikki solmut ja kaaret, miss
 
 ### Greedy Best First (GBF) -algoritmi
 
+Algoritmi lisää kekoon ainoastaan maalisolmua lähimmän solmun, eli sen "branching factor" on pääsääntöisesti 1. Merkitään *b* = branching factor ja *s* = keon maksimisyvyys = log *m*. Esimerkiksi [tämän verkosta löytyvän analyysin perusteella](https://ai.stackexchange.com/questions/8902/what-are-the-differences-between-a-and-greedy-best-first-search) kun ottaa huomioon solmujen tarkistukseen kuluvan ajan, tulisi algoritmin aikavaativuuden olla tällöin O(*b*^log *m*).
+
+Algoritmin tilavaativuus on ymmärtääkseni aina vakio O(1), sillä algoritmi tarvitsee muistia ainoastaan yhdelle solmulle, jonka se käsittelee välittömästi.
+
 ### A*-algoritmi
 
+Algortimi lisää kekoon solmun, joka minimoi summan kertynyt polkukustannus + Manhattan etäisyys loppusolmuun. GBF-algoritmin tapaan sen aikavaativuuden tulisi olla solmutarkistus huomioiden O(*b*^log *m*), perustuen [samaan lähteeseen kuin edellisessä](https://ai.stackexchange.com/questions/8902/what-are-the-differences-between-a-and-greedy-best-first-search)).
+
+Edelliseen artikkeelin perusteella A*-algortimin tilavaativuus olisi sama O(*b*^log *m*).
 
 ## Algoritmien empiirinen suorituskykyvertailu 
 
@@ -84,9 +91,10 @@ Suorituskykytestien tulokset olivat ennakko-oletusten mukaisia.
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
 
-(tulossa myöhemmin)
+* Mikäli algoritmeja haluaa vertailla isommalla otoksella jatkossa, tulisi algoritmien tulosraportointia kehittää käyttäjäystävällisemmäksi. Erillisten algoritmitulosteiden sijaan tulisi luoda yksi taulukko, josta näkee eri algortimikohtaiset metriikat vierekkäin. Samalla tulisi mahdollistaa otoskoon määrittäminen parametrilla, jotta voisi suoraan ajaa vaikka sata testikierrosta ja luoda niistä yhden koostetulosteen keskiarvoineen. Tuloste olisi syytä saada myös esim. pilkku- tai tab-eroteltuna tiedostona ulos, jotta tulosten graafista analyysia  voisi tehdä jossain toisessa työkalussa.
 
 ## Lähteet
 
 * Laaksonen, Antti. (2018). Tietorakenteet ja algoritmit.
 * Tietorakenteet ja algortimit, Helsingin Yliopiston kurssimateriaalit, kevät 2019
+* https://ai.stackexchange.com/questions/8902/what-are-the-differences-between-a-and-greedy-best-first-search
