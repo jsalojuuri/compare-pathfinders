@@ -6,6 +6,9 @@ Ohjelmalle on toteutettu automaattisia JUnit yksikkö- ja integraatiotestejä, t
 
 Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa komentorivillä käskyn ``./gradlew test jacocoTestReport`` ja avaamalla selaimeesi kansioon ./build/reports/jacoco/test/html generoidun html-pohjaisen raportin.
 
+
+![Codecov testikattavuusraportti](https://codecov.io/gh/jsalojuuri/compare-pathfinders/tree/97d69bf631c42eb417ca51659162e832b6dc8db3/src/main/java/copa)
+
 ![Jacocon testikattavuus-raportti](./reports/jacoco/jacoco.png)
 
 Pää- ja käyttöliittymäluokkia ei testata, joten testien rivikattavuus on yli 90% ja suurin osa eri haaroista myös testataan.
