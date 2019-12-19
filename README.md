@@ -25,3 +25,6 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 * [Testausdokumentti](./documentation/testing.md)
 * [Javadoc](./documentation/javadoc/)
 
+## Julkaisut
+
+* [Julkaisu v1.0](https://github.com/jsalojuuri/compare-pathfinders/releases/tag/v1.0)

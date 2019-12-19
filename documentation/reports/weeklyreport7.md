@@ -3,16 +3,17 @@
 Ajankäyttö viikon aikana: 15 tuntia
 
 Viikon aikana tehdyt asiat & ohjelman edistyminen:
-* Toteutettu omat ArrayList ja ArrayDeQue tietorakenteet
+* Toteutettu omat ArrayList ja ArrayDeque tietorakenteet
 * Lisätty testikattavuutta
 * Siivottu koodia lopullista palautusta varten
+* Algoritmien vertailuanalyysit
 * Täydennetty dokumentaatiota puuttuvilta osin
 * Javadoc ja Github release
 
 Mitä opin viikon aikana:
 * Dokumentoimaan ja viimeistelemään ohjelmointiprojektin
 
-### Projektin käytetyt tunnit yhteensä:
+### Projektiin käytetyt tunnit yhteensä:
 
 | vko | tunnit |
 | :----:|:-----|

@@ -36,6 +36,12 @@ javadoc {
     classpath = configurations.compile
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'copa.main.Main'
+    }
+}
+
 jacocoTestReport {
     reports {
         xml.enabled = true
