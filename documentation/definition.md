@@ -1,6 +1,6 @@
 # Määrittelydokumentti
 
-Tässä projektissa vertaillaan Breath First Search (BFS)-, Uniform Cost Search (UCS)-, Greedy Best First (GBF)- ja AStar (A*)-algoritmien tehokkuutta kaksiulotteisella kartalla ja toteutetaan kyseiset algoritmit Javalla korvaten Javan tarjoamat valmiit pino-, jono- tmv. tietorakenteet omilla toteutuksilla. 
+Tässä projektissa vertaillaan Breath First Search (BFS)-, Uniform Cost Search (UCS)-, Greedy Best First (GBF)- ja AStar (A*)-algoritmien tehokkuutta kaksiulotteisella kartalla ja toteutetaan kyseiset algoritmit Javalla korvaten Javan tarjoamat valmiit ArrayList, ArrayDeque ja PriorityQueue tietorakenteet omilla toteutuksilla siltä osin kuin niitä tarvitaan sovelluksessa. 
 
 Ohjelma saa syötteekseen [ASCII-pohjaisen karttatiedoston](https://movingai.com/benchmarks/grids.html), johon arvotaan reitin aloitus- ja lopetuspisteet. Algoritmien tehtävänä on löytyy mahdollisimman kustannustehokas reitti pisteiden välillä mahdollisimman vähäisellä laskennalla. Algoritmien tehokkuutta arvioidaan vertailemalla niiden tuottamien reittien kustanustehokkuutta ja tutkittujen ruutujen määrää. 
 * **Reitin kustannustehokkuuteen vaikuttaa** sekä kuljettujen karttaruutujen määrä että yksittäisen karttaruudun kustannus. Ruutukohtainen kustannus voi olla joko 1 (normaali ruutu) tai 5 (ruutu jossa puita). Tätä metriikkaa pyritään minimoimaan.
