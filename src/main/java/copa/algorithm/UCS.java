@@ -5,10 +5,10 @@ import copa.mapgraph.MapGraph;
 import copa.util.PriorityQueue;
 
    /** 
-     * Uniform Cost Search Algorithm for selected map.
+     * Uniform Cost Search PathAlgorithm for selected map.
      * @author Jari Salojuuri,
      */
-public class UCS {
+public class UCS implements PathAlgorithm {
     
     private MapGraph mapGraph;
     int nodesVisited;
@@ -30,6 +30,7 @@ public class UCS {
     }
     
     /** set starting node distance from finish node and it to priority queue, set starting node as noticed */
+    @Override
     public void algoSetup() {             
         start.setDistanceFromFinish(finish);
         queue.add(start);
@@ -37,6 +38,7 @@ public class UCS {
     }
 
     /** starts UCS algorithm */
+    @Override
     public void startAlgorithm() {    
 
         algoSetup();

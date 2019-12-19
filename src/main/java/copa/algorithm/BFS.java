@@ -8,7 +8,7 @@ import copa.util.ArrayDeque;
      * Breadth First Algorithm for selected map.
      * @author Jari Salojuuri,
      */
-public class BFS {
+public class BFS implements PathAlgorithm {
     
     private MapGraph mapGraph;
     int nodesVisited;
@@ -28,12 +28,14 @@ public class BFS {
     }
     
     /** add starting node to queue, set starting node as noticed */
+    @Override
     public void algoSetup() {        
         queue.add(start);
         noticed[start.getRow()][start.getCol()] = true;
     }
     
     /** starts BFS algorithm */
+    @Override
     public void startAlgorithm() {
         
         algoSetup();

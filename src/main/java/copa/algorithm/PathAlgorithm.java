@@ -1,10 +1,10 @@
 package copa.algorithm;
 
 /**
- *
+ * Generic interface class for pathfinder algorithms
  * @author salojuur
  */
-public interface Algorithm {
+public interface PathAlgorithm {
     
     void algoSetup();
     

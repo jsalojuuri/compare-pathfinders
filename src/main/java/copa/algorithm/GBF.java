@@ -8,7 +8,7 @@ import copa.util.PriorityQueue;
      * Greedy Best First Algorithm for selected map.
      * @author Jari Salojuuri,
      */
-public class GBF {
+public class GBF implements PathAlgorithm {
     
     /** map as a graph */
     private MapGraph mapGraph;
@@ -31,6 +31,7 @@ public class GBF {
     }
     
     /** set starting node distance from finish node and it to priority queue, set starting node as noticed */
+    @Override
     public void algoSetup() {        
         start.setDistanceFromFinish(finish);
         queue.add(start);
@@ -38,6 +39,7 @@ public class GBF {
     }
     
     /** starts GBF algorithm */
+    @Override
     public void startAlgorithm() {
         
         algoSetup();

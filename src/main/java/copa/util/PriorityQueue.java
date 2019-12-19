@@ -14,7 +14,7 @@ public class PriorityQueue<T> {
     private Comparator comparator;
     
     /**  
-     * Constructor to initialise PriorityQueue object
+     * Constructor to initialise PriorityQueue instance object
      * @param comparator object that compares queue's values
      */
     public PriorityQueue(Comparator comparator) {
@@ -24,7 +24,7 @@ public class PriorityQueue<T> {
     }
     
     /** 
-     * Returns the amount of value in queue 
+     * Returns the queue size 
      * @return queue size
      */
     public int size() {
@@ -49,7 +49,7 @@ public class PriorityQueue<T> {
     }
     
     /** 
-     * Swaps two indexes
+     * Swaps two indices
      * @param index1 first index
      * @param index2 second index
      */

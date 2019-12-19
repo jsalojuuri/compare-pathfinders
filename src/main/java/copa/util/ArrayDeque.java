@@ -45,7 +45,7 @@ public class ArrayDeque<T> {
      * @param value value to be added
      */
     public void add(T value) {
-        if (this.values.length == this.size +1) {
+        if (this.values.length == this.size + 1) {
             doubleArrayLength();
         }
         this.size++;

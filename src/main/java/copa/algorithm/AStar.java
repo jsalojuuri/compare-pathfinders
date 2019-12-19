@@ -5,10 +5,10 @@ import copa.mapgraph.MapGraph;
 import copa.util.PriorityQueue;
 
 /**
-  * A* Algorithm for selected map.
+  * A* PathAlgorithm for selected map.
   * @author Jari Salojuuri,
   */
-public class AStar implements Algorithm {
+public class AStar implements PathAlgorithm {
     
     MapGraph mapGraph;
     int nodesVisited;

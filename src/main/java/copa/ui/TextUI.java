@@ -1,10 +1,7 @@
 
 package copa.ui;
 
-import copa.algorithm.AStar;
-import copa.algorithm.BFS;
-import copa.algorithm.GBF;
-import copa.algorithm.UCS;
+import copa.algorithm.*;
 import copa.mapgraph.MapGraph;
 import java.util.Scanner;
 
@@ -35,41 +32,48 @@ public class TextUI implements UI {
             
             String input = scanner.nextLine();
 
-            /** Prints map */
             if (input.equals("1")) {
-                mapGraph.printMapFromGraph();
-                System.out.println("\nMAP SIZE: " + mapGraph.mapGraph.length + " rows, "
-                        + mapGraph.mapGraph[0].length + " columns");
-                System.out.println("START NODE coordinates: " + mapGraph.searchStartNode().toString());
-                System.out.println("FINISH NODE coordinates: " + mapGraph.searchFinishNode().toString() + "\n");        
+                printMap();
             }   
 
-            /** Compares algorithms */
+
             if (input.equals("2")) {
-                
-                System.out.println("\nBFS:");
-                BFS bfs = new BFS(mapGraph);
-                bfs.startAlgorithm();
-                
-                System.out.println("\nUCS:");
-                UCS ucs = new UCS(mapGraph);
-                ucs.startAlgorithm();
-                
-                System.out.println("\nGBF:");
-                GBF gbf = new GBF(mapGraph);
-                gbf.startAlgorithm();
-                
-                System.out.println("\nA*");
-                AStar astar = new AStar(mapGraph);
-                astar.startAlgorithm();
-                System.out.println("");
+                compareAlgorithms();
             }
             
-            /** Exits program */
             if (input.equals("q")) {
                 System.out.println("Goodbye!");
                 break;
             }
         }    
-    } 
+    }
+    
+    /** Prints map */
+    public void printMap() {
+        mapGraph.printMapFromGraph();
+        System.out.println("\nMAP SIZE: " + mapGraph.mapGraph.length + " rows, "
+                + mapGraph.mapGraph[0].length + " columns");
+        System.out.println("START NODE coordinates: " + mapGraph.searchStartNode().toString());
+        System.out.println("FINISH NODE coordinates: " + mapGraph.searchFinishNode().toString() + "\n"); 
+    }
+    
+    /** Compares algorithms */
+    public void compareAlgorithms() {                    
+        System.out.println("\nBFS:");
+        PathAlgorithm bfs = new BFS(mapGraph);
+        bfs.startAlgorithm();
+
+        System.out.println("\nUCS:");
+        PathAlgorithm ucs = new UCS(mapGraph);
+        ucs.startAlgorithm();
+
+        System.out.println("\nGBF:");
+        PathAlgorithm gbf = new GBF(mapGraph);
+        gbf.startAlgorithm();
+
+        System.out.println("\nA*");
+        PathAlgorithm astar = new AStar(mapGraph);
+        astar.startAlgorithm();
+        System.out.println("");
+    }
 }

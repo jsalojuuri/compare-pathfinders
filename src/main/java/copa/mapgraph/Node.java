@@ -21,7 +21,7 @@ public class Node {
      * @param col vertical location on map graph
      * @param type Node type, that can be "." (normal terrain), "T" (tree terrain), "@" (impassable terrain), "S" (start node) or "F" (finish node)
      */
-    public Node (int row, int col, String type) {
+    public Node(int row, int col, String type) {
         this.row = row;
         this.col = col;
         this.type = type;
