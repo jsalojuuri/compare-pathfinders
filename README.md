@@ -14,6 +14,7 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 * [Viikko 4](./documentation/reports/weeklyreport4.md)
 * [Viikko 5](./documentation/reports/weeklyreport5.md)
 * [Viikko 6](./documentation/reports/weeklyreport6.md)
+* [Viikko 7 ja yhteenveto projektin ajankäytöstä](./documentation/reports/weeklyreport7.md)
 
 ## Dokumentaatio
 
