@@ -13,13 +13,18 @@
 
 ![Sovelluslogiikka](./architecture/sovelluslogiikka.png)
 
-## Saavutetut aika- ja tilavaativuudet
-
-(tulossa myöhemmin)
-
 ## Algoritmien O-analyysi
 
-(tulossa myöhemmin)
+Ennen algoritmien O-analyysia on syytä huomauttaa, että toteuttamani algoritmit eivät ole edustamiensa algoritmien puhtaita versioita vaan muunnelmia, joiden aikavaativuus on jonkin verran "puhtaita versioita" korkeampi. Projektissa käyttämieni karttojen luonteesta johtuen olen lisännyt kaikkiin neljään algoritmiin ns. naapurisolmun tarkkailuvaiheen, jolla suljetaan jatkokäsittelystä pois solmut, joihin ei voi siirtyä (kartoissa merkattu merkillä "@"). Tämä lisää luonnollisesti algoritmien prosessointiaikaa. Osittain tämän vuoksi en nähnyt järkeväksi alkaa kellottamaan suorituskykyvertailun empiirisessä osassa algoritmien suoritusaikoja, vaan valitsin metriikoiksi omasta mielestäni mielekkäämmät "solmua tutkittu" ja "polun kustannus". Tämän valinnan mielekkyydestä saa olla eri mieltä, mutta näin päätin tehdä jo projektin alkuvaiheessa enkä tätä myöhemmin muuttanut.
+
+### Perinteinen leveyshaku (BFS)
+
+### Dijkstran Uniform Cost Search (UCS) -algoritmi
+
+### Greedy Best First (GBF) -algoritmi
+
+### A*-algoritmi
+
 
 ## Algoritmien empiirinen suorituskykyvertailu 
 
@@ -68,7 +73,7 @@ Suorituskykytestien tulokset olivat ennakko-oletusten mukaisia.
 
 * **Greedy Best First (GBF) -algoritmin** suorituskyky on ylivoimainen tutkittujen solmujen osalta: se on jokaisessa testissä tutkinut aina pienimmän määrän solmuja. Tämä johtuu algoritmin käyttämästä solmujen priorisointitavasta, joka perustuu ainoastaan maalisolmun Manhattan etäisyyteen tutkittavasta solmusta. Algoritmi jättää siis aina tutkimatta tarkemmin solmut, joiden etäisyys maalisolmusta on pidempi kuin pienimmän mahdollisen Manhattan etäisyyden solmulla. Algoritmin ahneudella on kuitenkin kääntöpuolensa: sillä on jokaisessa testitapauksessa myös kallein polun kustannus, poislukien 3 testitapausta, joissa maali- ja loppusolmun välillä ei ollut esteitä, jolloin algoritmit päätyivät tasapeliin. Algoritmi ei tee eroa normaalin ja puusolmun välillä, joten lisäkustannuksia aiheutuu varsin runsaasti eteentulleista puusolmuista. Erityisen huonosti algoritmi suoriutuu tilanteista, joissa lähtö- ja maalisolmujen välillä on umpikujaan johtavia poukamia. Tällöin algoritmi ohjautuu kulkemaan labyrintin poukamien reunoja pitkin, joista löytyy tyypillisesti paljon puusolmuja, joista kertyy nopeasti suuri lisäkustannus.   
 
-* **A*-algoritmin** suorituskyky tutkittujen solmujen osalta jää selvästi toiseksi GBF-algoritmiin nähden, mutta se voittaa kuitenkin kirkkaasti BFS- ja UCS-algoritmit. Tämä johtuu algoritmin tavasta priorisoida solmuja: solmun prioriteetti on korkein, jos sen yhteenlaskettu polun kustannus ja Manhattan etäisyys maalisolmusta on pienempi kuin muilla tarkastelulistalle otetuilla solmuilla. GBF-algoritmiin nähden eroa syntyy siis silloin, kun algoritmi pyrki välttämään korkean puusolmun tutkimista, jos se löytää näiden vierestä normaaleja solmuja, joista on pidempi matka maaliin. Huomionarvoista kuitenkin on se, minkälaiset painoarvot normaalile ja puusolmulle on valittu: koska puusolmun painoarvo on vain viisinkertainen normaaliin solmuun nähden, ei algoritmi lähde kiertämään pitkää usean puun muodostamaa metsää, vaan lähtee lopulta kokeilemaan metsän läpi kulkemista. Tällä on suora vaikutus myös polun kustannukseen: useimmissa testitapauksissa viiden puusolmujen lisäkustannus saa algoritmin kiertämään puusolmut ja siten löytämään yhtä optimaalisen polun kuin UCS-algoritmi. Toisinaan suurempi puusolmujen rykelmä on pakottanut algoritmin valitsemaan reitille osuneen puusolmun läpikulkemisen, jolloin polun kokonaiskustannus on saattanut olla aavistuksen UCS-algoritmia pidempi. Polun kustannuksen keskiarvossa on alle prosentin eroavaisuus, joten puiden läpikulkemisia on ollut oletettavasti huomattavan vähän. Painoarvoja muokkaamalla algoritmin suorituskykyä voisi helposti siis muokata: puusolmun kustannuksen painoarvoa höllentämällä polun kustannus saattaisi jonkin verran kasvaa, mutta vastaavasti tutkittujen solmujen määrä laskisi. Ja sama päinvastoin. Optimaalisen tasapainon löytäminen vaatisi herkkyysanalyysia erilaisilla painotuksilla ja useiden lisätestien tekemistä. Toisaalta optimaalinen ratkaisu riippuu myös siitä, kuinka paljon antaa painoarvoa nopeudelle (tutkitut solmut) ja edullisuudelle (polun kustannus). Algoritmin optimointi ei kuitenkaan ollut tämän projektin agendalla, mutta sen automatisointi voisi olla mielenkiintoinen harjoitustyö toisenlaisessa tutkimusasetelmassa.
+* **A\*-algoritmin** suorituskyky tutkittujen solmujen osalta jää selvästi toiseksi GBF-algoritmiin nähden, mutta se voittaa kuitenkin kirkkaasti BFS- ja UCS-algoritmit. Tämä johtuu algoritmin tavasta priorisoida solmuja: solmun prioriteetti on korkein, jos sen yhteenlaskettu polun kustannus ja Manhattan etäisyys maalisolmusta on pienempi kuin muilla tarkastelulistalle otetuilla solmuilla. GBF-algoritmiin nähden eroa syntyy siis silloin, kun algoritmi pyrki välttämään korkean puusolmun tutkimista, jos se löytää näiden vierestä normaaleja solmuja, joista on pidempi matka maaliin. Huomionarvoista kuitenkin on se, minkälaiset painoarvot normaalile ja puusolmulle on valittu: koska puusolmun painoarvo on vain viisinkertainen normaaliin solmuun nähden, ei algoritmi lähde kiertämään pitkää usean puun muodostamaa metsää, vaan lähtee lopulta kokeilemaan metsän läpi kulkemista. Tällä on suora vaikutus myös polun kustannukseen: useimmissa testitapauksissa viiden puusolmujen lisäkustannus saa algoritmin kiertämään puusolmut ja siten löytämään yhtä optimaalisen polun kuin UCS-algoritmi. Toisinaan suurempi puusolmujen rykelmä on pakottanut algoritmin valitsemaan reitille osuneen puusolmun läpikulkemisen, jolloin polun kokonaiskustannus on saattanut olla aavistuksen UCS-algoritmia pidempi. Polun kustannuksen keskiarvossa on alle prosentin eroavaisuus, joten puiden läpikulkemisia on ollut oletettavasti huomattavan vähän. Painoarvoja muokkaamalla algoritmin suorituskykyä voisi helposti siis muokata: puusolmun kustannuksen painoarvoa höllentämällä polun kustannus saattaisi jonkin verran kasvaa, mutta vastaavasti tutkittujen solmujen määrä laskisi. Ja sama päinvastoin. Optimaalisen tasapainon löytäminen vaatisi herkkyysanalyysia erilaisilla painotuksilla ja useiden lisätestien tekemistä. Toisaalta optimaalinen ratkaisu riippuu myös siitä, kuinka paljon antaa painoarvoa nopeudelle (tutkitut solmut) ja edullisuudelle (polun kustannus). Algoritmin optimointi ei kuitenkaan ollut tämän projektin agendalla, mutta sen automatisointi voisi olla mielenkiintoinen harjoitustyö toisenlaisessa tutkimusasetelmassa.
 
 
 ## Työn mahdolliset puutteet ja parannusehdotukset
@@ -77,3 +82,5 @@ Suorituskykytestien tulokset olivat ennakko-oletusten mukaisia.
 
 ## Lähteet
 
+* Laaksonen, Antti. (2018). Tietorakenteet ja algoritmit.
+* Tietorakenteet ja algortimit, Helsingin Yliopiston kurssimateriaalit, kevät 2019
