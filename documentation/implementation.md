@@ -4,7 +4,7 @@
 
 * Ohjelmasta löytyy viisi pakettia:
     * **copa.main** pääohjelma
-    * **copa.algorithm** sisältää luokat kaikille algoritmeille ja Comparato-luokat niitä tarvitseville algoritmeille
+    * **copa.algorithm** sisältää polkualgoritmirajapinnan ja sitä toteuttavat luokat kaikille algoritmeille ja NodeComparator-luokat niitä tarvitseville algoritmeille. Algoritmien NodeComparator-luokat sisältävät ainoastaan logiikan kahden Node-olion vertailua varten. 
     * **copa.mapgraph** sisältää luokan MapGraph, jossa mm. metodit ASCII-kartan muuntamiseksi verkoksi ja kartan piirtämiseksi näytölle. Lisäksi luokka Node kartan solmuja varten.
     * **copa.ui** sisältää käyttöliittymärajapinnan sen sitä toteuttavan tekstikäyttöliittymäluokan. Jo luodun yksinkertaisen tekstikäyttöliittymän lisäksi ei ole aikomusta luoda muunlaisia käyttöliittymiä.
     * **copa.util** sisältää Javan java.util paketin toteutuksia korvaavat luokat PriorityQueue, ArrayDeque ja ArrayList.
