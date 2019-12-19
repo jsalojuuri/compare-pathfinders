@@ -6,8 +6,12 @@
     * **copa.main** pääohjelma
     * **copa.algorithm** sisältää luokat kaikille algoritmeille ja Comparato-luokat niitä tarvitseville algoritmeille
     * **copa.mapgraph** sisältää luokan MapGraph, jossa mm. metodit ASCII-kartan muuntamiseksi verkoksi ja kartan piirtämiseksi näytölle. Lisäksi luokka Node kartan solmuja varten.
-    * **copa.ui** Käyttöliittymän vaatimat luokat. Jo luodun yksinkertaisen tekstikäyttöliittymän lisäksi ei ole aikomusta luoda muunlaisia käyttöliittymiä.
+    * **copa.ui** sisältää käyttöliittymärajapinnan sen sitä toteuttavan tekstikäyttöliittymäluokan. Jo luodun yksinkertaisen tekstikäyttöliittymän lisäksi ei ole aikomusta luoda muunlaisia käyttöliittymiä.
     * **copa.util** sisältää Javan java.util paketin toteutuksia korvaavat luokat PriorityQueue, ArrayDeque ja ArrayList.
+
+* Ohessa varsin tyhjentävä kaavio ohjelman luokkien toteuttamasta sovelluslogiikasta:
+
+![Sovelluslogiikka](./architecture/sovelluslogiikka.png)
 
 ## Saavutetut aika- ja tilavaativuudet
 
@@ -20,7 +24,7 @@
 
 Algoritmien suorituskykyä vertaillaan kahdella metriikalla:
 * **Polun kustannus**: Algoritmin löytämän polun kokonaiskustannus. Tavallisesta ruudusta kertyy yksi kustannuspiste, puun sisältävästä ruudusta 5 pistettä. Algoritmin suorituskyky on aina sitä parempi, mitä pienempi polun kustannus on.
-* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee. Tämän metriikan voi ajatella vertautuvan algoritmin suorittamiseen kuluvaan aikaan. Algoritmin suorituskyky on aina sitä parempi, mitä vähemmän solmuja tutkitaan on.
+* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee. Tämän metriikan voi ajatella vertautuvan algoritmin suorittamiseen kuluvaan aikaan. Algoritmin suorituskyky on aina sitä parempi, mitä vähemmän solmuja tutkitaan.
 
 Analyysia varten kaikki algortimit ajettiin 20 kertaan, jotta saatiin tilastollisesti riittävän kattava otos aikaiseksi algoritmien eroista. 
 
