@@ -15,11 +15,17 @@
 
 ## Algoritmien O-analyysi
 
-Ennen algoritmien O-analyysia on syytä huomauttaa, että toteuttamani algoritmit eivät ole edustamiensa algoritmien puhtaita versioita vaan muunnelmia, joiden aikavaativuus on jonkin verran "puhtaita versioita" korkeampi. Projektissa käyttämieni karttojen luonteesta johtuen olen lisännyt kaikkiin neljään algoritmiin ns. naapurisolmun tarkkailuvaiheen, jolla suljetaan jatkokäsittelystä pois solmut, joihin ei voi siirtyä (kartoissa merkattu merkillä "@"). Tämä lisää luonnollisesti algoritmien prosessointiaikaa. Osittain tämän vuoksi en nähnyt järkeväksi alkaa kellottamaan suorituskykyvertailun empiirisessä osassa algoritmien suoritusaikoja, vaan valitsin metriikoiksi omasta mielestäni mielekkäämmät "solmua tutkittu" ja "polun kustannus". Tämän valinnan mielekkyydestä saa olla eri mieltä, mutta näin päätin tehdä jo projektin alkuvaiheessa enkä tätä myöhemmin muuttanut.
+Ennen algoritmien O-analyysia on syytä huomauttaa, että toteuttamani algoritmit eivät ole edustamiensa algoritmien puhtaita versioita vaan muunnelmia, joiden aikavaativuus on jonkin verran "puhtaita versioita" korkeampi. Projektissa käyttämieni karttojen luonteesta johtuen olen lisännyt kaikkiin neljään algoritmiin ns. naapurisolmun tarkkailuvaiheen, jolla suljetaan jatkokäsittelystä pois solmut, joihin ei voi siirtyä (kartoissa merkattu merkillä "@"). Tämä lisää luonnollisesti algoritmien prosessointiaikaa. Yksittäisen tarkistuksen toteutus tapahtuu kuitenkin vakioajassa kaksiulotteisen boolean-taulukon avulla: algoritmi tarkistaa ajassa O(1) onko solmua noteerattu (noticed). Jos tulos on ``false``, suoritetaan ajassa O(1) taulukon päivitys kyseisen solun osalta tilaan ``true``. Tarkistuksen aikavaativuus on siis pahimmassa tapauksessa O(2 * *n* * 1) = O(2*n*) = O(*n*), kun *n* = kartan solmujen määrä. Tämä pätee siis kaikkien valittujen algoritmien osalta, joten en käy sitä uudelleen läpi seuraavissa algortimikohtaisissa O-analyyseissa sen tarkemmin.
+
+Todetaan vielä sekin, että pääosin tämän havainnointihaasteen takia en nähnyt järkeväksi alkaa kellottamaan suorituskykyvertailun empiirisessä osassa algoritmien suoritusaikoja, vaan valitsin metriikoiksi omasta mielestäni mielekkäämmät "solmua tutkittu" ja "polun kustannus". Tämän valinnan mielekkyydestä saa olla eri mieltä, mutta näin päätin tehdä jo projektin alkuvaiheessa enkä tätä myöhemmin muuttanut.
 
 ### Perinteinen leveyshaku (BFS)
 
+Algoritmi lisää pahimmassa tapauksessa kaikki verkon solmut jonoon ja käsittelee jokaisen solmun ja kaaren kerran. Lisäksi solmujen tarkistuksen osalta kuluu pahimmillaan aikaa O(*n*), joten aikavaativuus on O(2*n* + *m*) = O(*n* + *m*).
+
 ### Dijkstran Uniform Cost Search (UCS) -algoritmi
+
+Algoritmi käy pahimmassa tapauksessa läpi verkon kaikki solmut ja kaaret, missä kuluu aikaa O(*n* + *m*), missä *m* = kaarien lukumäärä. Lisäksi algoritmi lisää kekoon solmuja, mikä vie pahimmillaan aikaa O(*m* log *m*). Lisäksi solmujen tarkistuksen osalta kuluu pahimmillaan aikaa O(*n*), joten aikavaativuus on (2*n* + *m* log *m*) = (*n* + *m* log *m*).
 
 ### Greedy Best First (GBF) -algoritmi
 
