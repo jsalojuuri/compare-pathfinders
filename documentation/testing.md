@@ -1,8 +1,8 @@
 # Testausdokumentti
 
-Ohjelmalle on toteutettu automaattisia JUnit yksikkö- ja integraatiotestejä. Testien rivi- ja haaraumakattavuus on raportoitu JaCoCo:n avulla, josta oheen on liitetty kuvakaappauksia sovelluksen lopellisesta versiosta.
+Ohjelmalle on toteutettu automaattisia JUnit yksikkö- ja integraatiotestejä. Testien rivi- ja haaraumakattavuus on raportoitu JaCoCo:n avulla, josta oheen on liitetty kuvakaappauksia sovelluksen lopullisesta versiosta.
 
-Klikkaamalla oheista Codecov-työkalun linkkiä pääset tarkastelemaan Githubista löytyvän viimeisimmän sovellusversion vastaavia Jacoco-testien tuloksia tarkemmin. Löydät palvelusta mm. oheisia metodikohtaiset testauskattavuudet ja testikattavuuden kehitystrendin projektin aikana.
+Klikkaamalla oheista Codecov-työkalun linkkiä pääset tarkastelemaan Githubista löytyvän viimeisimmän sovellusversion vastaavia Jacoco-testien tuloksia tarkemmin. Löydät palvelusta mm. metodikohtaiset testauskattavuudet ja testikattavuuden kehitystrendin projektin aikana. Codecov laskee testikattavuuden Jacocon raporteista hieman eri tavalla, jonka vuoksi sen raportoimat kattavuusprosentit ovat hieman Jacocon omia lukuja pienempiä.
 
 [![Testikattavuus](https://codecov.io/gh/jsalojuuri/compare-pathfinders/branch/master/graph/badge.svg)](https://codecov.io/gh/jsalojuuri/compare-pathfinders)
 

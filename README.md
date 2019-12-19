@@ -22,4 +22,5 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 * [Käyttöohje](./documentation/manual.md)
 * [Toteutusdokumentti](./documentation/implementation.md)
 * [Testausdokumentti](./documentation/testing.md)
+* [Javadoc](./documentation/javadoc/)
 

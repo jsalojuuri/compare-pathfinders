@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"copa.algorithm"},{"l":"copa.main"},{"l":"copa.mapgraph"},{"l":"copa.ui"},{"l":"copa.util"}]

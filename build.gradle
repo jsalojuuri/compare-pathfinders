@@ -27,10 +27,13 @@ mainClassName = 'copa.main.Main'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-
-
 dependencies {
     testCompile "junit:junit:" + junitVersion 
+}
+
+javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
 }
 
 jacocoTestReport {
