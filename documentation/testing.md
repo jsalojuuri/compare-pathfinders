@@ -4,10 +4,9 @@ Ohjelmalle on toteutettu automaattisia JUnit yksikkö- ja integraatiotestejä, t
 
 ## Testauksen kattavuus
 
-Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa komentorivillä käskyn ``./gradlew test jacocoTestReport`` ja avaamalla selaimeesi kansioon ./build/reports/jacoco/test/html generoidun html-pohjaisen raportin.
+Ajantasaisen tiedon testien kattavuudesta saat ajamalla sovelluksen juuressa komentorivillä käskyn ``./gradlew test jacocoTestReport`` ja avaamalla selaimeesi kansioon ./build/reports/jacoco/test/html generoidun html-pohjaisen raportin. Vaihtoehtoisesti voit klikata alla olevaa Codecov-työkalun linkkiä, jolla pääset tarkastelemaan Githubista löytyvän viimeisimmän sovellusversion vastaavia Jacoco-testien tuloksia.
 
-
-![Codecov testikattavuusraportti](https://codecov.io/gh/jsalojuuri/compare-pathfinders)
+[![Testikattavuus](https://codecov.io/gh/jsalojuuri/compare-pathfinders/branch/master/graph/badge.svg)](https://codecov.io/gh/jsalojuuri/compare-pathfinders)
 
 ![Jacocon testikattavuus-raportti](./reports/jacoco/jacoco.png)
 
