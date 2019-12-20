@@ -31,24 +31,26 @@ Compare Pathfinders sovelluksella voi vertailla neljää *Javalla* toteutettua p
 
 ## Komentorivitoiminnot
 
-### Ohjelman käynnistys
+### Checkstyle-raportin generointi
 
 ``./gradlew run``
 
-Ohjelma ajaa käynnistyksen yhteydessä Checkstyle-raportit, jotka löydät build-kansion alta.
+Ohjelma generoi ohjelman käynnistyksen yhteydessä Checkstyle-raportit, jotka löydät kansiosta ./build/reports/checkstyle
 
-### Junit-testien ajo
-
-``./gradlew test``
-
-### Jacoco-testikattavuus raportin ajo
+### Jacoco testikattavuusraportin generointi
 
 ``./gradlew test jacocoTestReport``
+
+Komento generoi Jacocon html-raportin kansioon ./build/reports/jacoco/html
 
 ### Javadocin generointi
 
 ``./gradlew javadoc``
 
+Komento generoi javadoc-dokumentaation html-version kansioon ./build/docs/javadoc
+
 ### Jarin generointi
 
 ``./gradlew jar``
+
+Komento generoi tiedoston compare-pathfinders.jar kansioon ./build/libs/ . Kopioi repositorion juuresta kansio static/ jar-tiedoston sijaintikansioon, jotta ohjelma saa haettua sieltä tarvitsemansa karttatiedoston.

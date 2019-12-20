@@ -35,7 +35,7 @@ Algoritmin tilavaativuus on ymmärtääkseni aina vakio O(1), sillä algoritmi t
 
 ### A*-algoritmi
 
-Algortimi lisää kekoon solmun, joka minimoi summan kertynyt polkukustannus + Manhattan etäisyys loppusolmuun. GBF-algoritmin tapaan sen aikavaativuuden tulisi olla solmutarkistus huomioiden O(*b*^log *m*), perustuen [samaan lähteeseen kuin edellisessä](https://ai.stackexchange.com/questions/8902/what-are-the-differences-between-a-and-greedy-best-first-search)).
+Algortimi lisää kekoon solmun, joka minimoi summan kertynyt polkukustannus + Manhattan etäisyys loppusolmuun. GBF-algoritmin tapaan sen aikavaativuuden tulisi olla solmutarkistus huomioiden O(*b*^log *m*), perustuen [samaan lähteeseen kuin edellisessä](https://ai.stackexchange.com/questions/8902/what-are-the-differences-between-a-and-greedy-best-first-search).
 
 Edelliseen artikkeelin perusteella A*-algortimin tilavaativuus olisi sama O(*b*^log *m*).
 
