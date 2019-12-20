@@ -43,11 +43,11 @@ Edelliseen artikkeelin perusteella A*-algortimin tilavaativuus olisi sama O(*b*^
 
 ### Otoskoko ja vertailuun käytetyt metriikat 
 
-Empiiristä suorituskykyvertailua varten kaikki algortimit ajettiin 20 kertaan, jotta saatiin tämän projektin tarpeita ajatellen tilastollisesti riittävän kattava otos aikaiseksi algoritmien eroista.
+Empiiristä suorituskykyvertailua varten kaikki algortimit ajettiin 20 kertaan, jotta saatiin tämän projektin tarpeita ajatellen riittävän kattava otos aikaiseksi algoritmien eroista.
 
 Algoritmien suorituskykyä vertaillaan kahdella metriikalla:
 * **Polun kustannus**: Algoritmin löytämän polun kokonaiskustannus. Tavallisesta ruudusta kertyy yksi kustannuspiste, puun sisältävästä ruudusta 5 pistettä. Algoritmin suorituskyky on aina sitä parempi, mitä pienempi polun kustannus on.
-* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee. Tämän metriikan voi ajatella vertautuvan algoritmin suorittamiseen kuluvaan aikaan. Algoritmin suorituskyky on aina sitä parempi, mitä vähemmän solmuja tutkitaan.
+* **Solmua tutkittu**: Solmujen määrä, joissa algoritmi vierailee. Algoritmin suorituskyky on aina sitä parempi, mitä vähemmän solmuja tutkitaan.
  
 
 ### Suorituskykytestien tulokset
